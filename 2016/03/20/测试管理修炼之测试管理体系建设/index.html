@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zhn-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/1171080.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/1199129.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/1171080.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="测试流程,测试体系," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 测试的价值1应该体现在- 测试工作或技术对项目流程的渗透，以及在整体产品生命周期中主动质量控制以及对生产流程的改进和完善应该是测试终极价值的体现，这并非是一两个测试技术高手，或引入几个测试技术能解决的事情。从整个产品的链条来看，测试和其他环节一样重要，是整个产品不可或缺的关键节点。  2. 软件开发生命周期大致分为 -  需求计划（产品部门）–&gt; 概要设计（研发部门、产品部门）–&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="测试管理修炼之测试管理体系建设">
+<meta property="og:url" content="http://lelloandluck.github.io/2016/03/20/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E4%BF%AE%E7%82%BC%E4%B9%8B%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE/index.html">
+<meta property="og:site_name" content="&lt;img src&#x3D;&quot;&#x2F;images&#x2F;Icon.jpg&quot; alt&#x3D;&quot;Welcome back&quot;&gt;&lt;font face&#x3D;&#39;STCAIYUN&#39;&gt;&lt;br&#x2F;&gt;To make a difference life&lt;&#x2F;font&gt; &lt;br&#x2F;&gt;&lt;font color&#x3D;&quot;yellow&quot; size&#x3D;4&gt;Welcome to alan&#39;s blog&lt;&#x2F;font&gt;">
+<meta property="og:description" content="1. 测试的价值1应该体现在- 测试工作或技术对项目流程的渗透，以及在整体产品生命周期中主动质量控制以及对生产流程的改进和完善应该是测试终极价值的体现，这并非是一两个测试技术高手，或引入几个测试技术能解决的事情。从整个产品的链条来看，测试和其他环节一样重要，是整个产品不可或缺的关键节点。  2. 软件开发生命周期大致分为 -  需求计划（产品部门）–&gt; 概要设计（研发部门、产品部门）–&amp;gt">
+<meta property="og:locale">
+<meta property="article:published_time" content="2016-03-20T06:47:02.000Z">
+<meta property="article:modified_time" content="2018-10-15T02:26:01.969Z">
+<meta property="article:author" content="Alan.yuan">
+<meta property="article:tag" content="测试流程">
+<meta property="article:tag" content="测试体系">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":20,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"perspectiveRightIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":9},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lelloandluck.github.io/2016/03/20/测试管理修炼之测试管理体系建设/"/>
+
+
+
+
+
+  <title>测试管理修炼之测试管理体系建设 | <img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font></title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zhn-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title"><img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font></span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"><A sprint for top expert in testing></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lelloandluck.github.io/2016/03/20/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E4%BF%AE%E7%82%BC%E4%B9%8B%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="<img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font>">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">测试管理修炼之测试管理体系建设</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-03-20T14:47:02+08:00">
+                2016-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86/" itemprop="url" rel="index">
+                    <span itemprop="name">测试管理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-测试的价值"><a href="#1-测试的价值" class="headerlink" title="1. 测试的价值"></a>1. 测试的价值</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">应该体现在- 测试工作或技术对项目流程的渗透，以及在整体产品生命周期中主动质量控制以及对生产流程的改进和完善应该是测试终极价值的体现，这并非是一两个测试技术高手，或引入几个测试技术能解决的事情。从整个产品的链条来看，测试和其他环节一样重要，是整个产品不可或缺的关键节点。</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-软件开发生命周期大致分为"><a href="#2-软件开发生命周期大致分为" class="headerlink" title="2. 软件开发生命周期大致分为 -"></a>2. 软件开发生命周期大致分为 -</h2><blockquote>
+<p><font color="#dd0000" face="黑体"> 需求计划（产品部门）–&gt; 概要设计（研发部门、产品部门）–&gt;详细设计（研发部门）–&gt;编码实现/Coding（研发部门）–&gt; 测试(测试部门) –&gt; 验收（产品部门）</p>
+</blockquote>
+<ul>
+<li>该过程是产品生命周期的必然体现。无论采取哪种开发模式(瀑布式，敏捷模式)都应该遵行该过程，开发模式的不同主要体现在开发效率上，而并非要违反产品的生命周期。<span id="more"></span></li>
+</ul>
+<h2 id="3-测试体现建设的整体思路"><a href="#3-测试体现建设的整体思路" class="headerlink" title="3. 测试体现建设的整体思路"></a>3. 测试体现建设的整体思路</h2><p>测试管理体系是一个系统工程，要建设测试管理体系要从构成该系统的过程加以识别和管理，以实现设定的系统目标，同时要确保各个过程协同作用相互促进。从而使它们的总体作用大于各个作用之和。 建设测试体现的宗旨就是让测试渗透到软件生命周期的各个环境，从而更早的发现和排除缺陷。</p>
+<ul>
+<li><h4 id="测试体系的建设可以从如下几个方面-过程来考量："><a href="#测试体系的建设可以从如下几个方面-过程来考量：" class="headerlink" title="测试体系的建设可以从如下几个方面/过程来考量："></a>测试体系的建设可以从如下几个方面/过程来考量：</h4></li>
+</ul>
+<ol>
+<li><p>测试规划（Test Strategy）- 确定各测试阶段的目标和策略，明确各测试阶段的活动安排，时间节点和资源配置（如人员安排，设备安排，技术及其他安排等）以及跟踪<br>和控制测试过程的活动等内容；该过程输出测试计划（Test Plan）。如需求阶段要完成验收计划（UAT 计划），概要设计阶段要完成系统测试计划，详细设计阶段要完成集成测试计划（SIT 计划），编码阶段要完成单元测试计划（Unit Test 计划）任何对计划的修改都要提交评审组评审（评审组通常由项目的各个相关方组成，如产品人员，开发人员，测试以及QA人员等）</p>
+</li>
+<li><p>测试设计 - 即根据测试计划设计测试方案，该过程输出测试用例（Test Case），此过程与软件开发活动同步进行，其结果可作为各阶段测试计划的附件进行提交审核。</p>
+</li>
+<li><p>测试实施 - 就是根据测试用例来执行测试，并对结果进行对比，记录，缺陷跟踪和管理等活动，最终得到测试报告（Test Report）</p>
+</li>
+<li><p>配置管理 - 是软件管理的子集，作用于测试的各个阶段（即需求阶段，概要阶段，详细设计阶段，编码阶段，验收阶段等）， 管理对象包括测试计划，测试用例，测试版    本，测试结果，测试工具以及环境等内容。</p>
+</li>
+<li><p>资源管理 - 包括对人力资源和工作场所，以及相关设施和技术支持的管理。如果有专用实验室，还有其他管理等内容覆盖。</p>
+</li>
+<li><p>测试管理 - 即采取使用的方法对上述过程及结果进行监视，并在适用时进行测量，以保证过程的有效性，如果发现过程没有达到预期的效果，还可进行适当的调整或纠<br>正。</p>
+</li>
+</ol>
+<ul>
+<li>以上六个过程可作为建设软件管理体系的实施步骤，首先要确定软件测试所需的过程和应用（根据公司实际情况从六大步骤中选择确定）；然后就是要确定这些过程的顺序和相互作用；确定这些过程所需的准则和方法，一般应制定这些过程形成文件的程序，以及监视，测量和控制的标准和方法（这一步可参考TMMI标准来进行制定）。从以上六个过程中可以看出，测试阶段要产出的文件有： Test Strategy， Test Plan， Test Case， Test Report （test Bug tracking）</li>
+</ul>
+<h2 id="4-建立测试管理体系的理论依据"><a href="#4-建立测试管理体系的理论依据" class="headerlink" title="4. 建立测试管理体系的理论依据"></a>4. 建立测试管理体系的理论依据</h2><p>CMM(Capability Maturity Model)- 能力成熟度模型，是软件界的广泛使用的过程度量模型，旨在提升软件各个环节的作业标准，推动整个行业朝着更加规范，更加科学，也更加可控的方向发展。CMM是软件发展的必然产物，是被反复证明确实能帮助企业和产品提升自身竞争力的事实依据。也得到了国际上绝大多数软件厂商的认可和积极参与，获得CMM国际认证也成了各大软件公司的追求目标。既然如此，测试作为软件生产必不可少的一环，制定和CMM标准相匹配的测试管理体系就显得尤为重要了。事实上在测试界也有与之对称的标准，称之为TMM。废话少说，下面我简要介绍下TMMi和CMMi的相关规范和等级定义，了解和熟悉这些规则是管理测试团队的重要理论依据。</p>
+<h4 id="CMMi的五级定义："><a href="#CMMi的五级定义：" class="headerlink" title="CMMi的五级定义："></a>CMMi的五级定义：</h4><ol>
+<li>Initial （初始级）- 处于这个级别的组织，基本没有健全的软件工程管理制度。每件事情都是以<br> 特殊的方法来做，事情的成败取决于团队成员的个人能力，具有很大的偶然性，人员变动，则一切都跟着改变，处处充满危机，软件生产随意性很大，基本无法可依，无章可循。</li>
+</ol>
+<ul>
+<li>Repeatable （可重复级） - 在这一级别的团队，有些基本的软件项目管理行为，主要是参考之<br>  前项目经验，借鉴一些具体措施，可以预防一些危机的发生。</li>
+<li>Defined （已定义级）- 在这一级别的团队，已为软件的生产编制了完整的文档，软件过程管理<br>  和技术方面都有明确的定义，也采取了评审的办法来保证软件的质量。对生产过程的管理具有随意性，并不能严格的管理过程。</li>
+<li>Manage（已管理级） - 一个处于第4级的公司对每个项目都设定质量和生产目标。这两个量将被不断地测量，当<br>  偏离目标太多时，就采取行动来修正。利用统计质量控制，管理部门能区分出随机偏离和有深刻含义的质量或生产目标的偏离</li>
+<li>Optimizing （已优化级）—个第5级组织的目标是连续地改进软件过程。这样的组织使用统计质量和过程控制技术作为指导。从各个方面中获得的知识将被运用在以后的项目中，从而使软件过程融入了正反馈循环，使生产率和质量得到稳步的改进。达到该级的公司可自发的不断改进，防止同类缺陷二次出现。</li>
+</ul>
+<h4 id="TMMi的五级定义："><a href="#TMMi的五级定义：" class="headerlink" title="TMMi的五级定义："></a>TMMi的五级定义：</h4><ul>
+<li>和CMMi类似，TMMi也分五个等级进行定义，其大意和CMMi相当，这是在软件测试白皮书上摘抄的定义 -</li>
+</ul>
+<ol>
+<li><font color="#dd0000" face="Gill Sans MT" size = "3"> Initia </font> –Similar CMM, no plan and system to test activities. Random and no document tracing</li>
+<li><font color="#dd0000" face="Gill Sans MT" size = "3">Phase Definition </font> - Establish basic techniques and methods, develop testing and debugging goals</li>
+<li><font color="#dd0000" face="Gill Sans MT" size = "3">Integration </font> - Establish test organization, integration testing into the project lifecycle, establish technical training<br>programmer and control and monitor testing</li>
+<li><font color="#dd0000" face="Gill Sans MT" size = "3">Management and Measurement </font> - Establish organizational review programmer; Establish test measurement programmer; software quality evaluation</li>
+<li><font color="#dd0000" face="Gill Sans MT" size = "3"> Optimization, defect prevention and quality control</font> - use process data for defect prevention; quality control; Test process optimization</li>
+</ol>
+<ul>
+<li>Tmm 和 CMM类似，有些书上对他们的定义完全相同，他是在CMM的基础上发展而来的，目的是提高软件生产团队的效率，它只是一种形式测试，并不代表软件本身的质量，它是检验你的软件生产是否遵循了一定的程序，是否有相应的管理措施和监管措施，不涉及软件本身内容。只是检测程序的形式，是否有各种会议，步骤等，至于会议开了什么内容，没有任何关系。CMMi-5是最高水平，取得CMMi5的最多的国家是印度，但是印度的软件质量很差，这折射了这种形式测试的局限性. 作为测试管理者，不应该只局限于这些规范和标准，要根据各自公司的实际，制定符合自身阶段的测试体系。一味追求高等级的认证标准，很容易让测试流于形式，适得其反。</li>
+</ul>
+<h2 id="5-如何开展敏捷软件测试活动"><a href="#5-如何开展敏捷软件测试活动" class="headerlink" title="5. 如何开展敏捷软件测试活动"></a>5. 如何开展敏捷软件测试活动</h2><p>上面介绍了如何建立软件测试体系和遵行的理论依据，这里我就自身经验，结合网上大咖的梳理，介绍下敏捷软件测试活动展开的具体步骤，仅供大家参考。</p>
+<ul>
+<li><font color="#dd0000" face="Gill Sans MT" size = "3">测试需求</font><br>收集和整理本迭代中的所有需求（主要体现为新增功能和原有功能的修改），建议以在线文档（例如google的google docs, Tencent的协同办公软件）的方式管理每个迭代中的需求变化。通常需要对来自产品的需求进行一定程度的细化，细化到本产品的测试工程师能够清楚理解需要验证的点即可，同时测试需求通常需要与产品负责人和开发组确认（非正式评审）。</li>
+<li><font color="#dd0000" face="Gill Sans MT" size = "3">测试计划</font><br>“一页纸（One Page）”的测试计划是一个很好的实践。测试计划中只需要包含本次迭代的目标，以及简单的时间和资源计划即可。</li>
+<li><font color="#dd0000" face="Gill Sans MT" size = "3">测试设计与执行</font><br>敏捷测试中的测试设计与执行通常是交织在一起的，对于新功能，测试工程师通常通过对新功能的使用和尝试来了解之，然后为其设计测试用例并用脚本（手工测试用例或自动化脚本）的方式将其固定下来；而对于原有功能的测试主要依靠自动化测试来进行。在测试设计阶段，测试工程师需要维护验收测试，以保证其准确地反映了每个迭代的目标。推荐使用在线表格或是轻量的用例管理软件对用例进行管理，在自动化程度比较高的情况下，甚至可以直接依赖测试需求列表和自动化测试脚本，而无需创建手工用例集合。</li>
+<li><font color="#dd0000" face="Gill Sans MT" size = "3">测试评估总结</font><br>测试评估总结意味着对每个迭代中进行的测试进行评估与总结。与传统的测试相同，敏捷测试中评估的主要目的同样是获得被测产品质量与测试质量的度量。</li>
+</ul>
+<p>总之，敏捷的软件测试工作不要拘泥于形式和文档，要将TMM精神体现在测试思维和执行力上，最大限度的确保测试完整性和覆盖率。在此基础上再进一步完善测试流程和归档整理。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/QRcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
+    <div>subscribe my blog by scanning this QR code</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixinincome.GIF" alt=" WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/Alipayincome.GIF" alt=" Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B/" rel="tag"># 测试流程</a>
+          
+            <a href="/tags/%E6%B5%8B%E8%AF%95%E4%BD%93%E7%B3%BB/" rel="tag"># 测试体系</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/08/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E4%BF%AE%E7%82%BC%E4%B9%8BAgile%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/" rel="next" title="测试管理修炼之Agile开发模式">
+                <i class="fa fa-chevron-left"></i> 测试管理修炼之Agile开发模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/22/hello-world/" rel="prev" title="The relationship between Hexo and Blog">
+                The relationship between Hexo and Blog <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  <div>
+      
+          <div> 
+	 
+		<div style="text-align:center;color: #ccc;font-size:14px;padding-top:2px"> 			
+			-------------本文结束 <i class="fa fa-paw"> </i> 感谢您的阅读------------- 
+		</div> 
+	 
+</div>
+
+      
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar1.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+                <a href="/archives">
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:alan_yuan009@live.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.wechat.com/zh_HK" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-wechat"></i>Wechat</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/Alan_CV_EN_LatestUpdate.pdf" target="_blank" title="AboutMe_EN">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>AboutMe_EN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/Alan_CV_CN_LatestUpdate.pdf" target="_blank" title="AboutMe_CN">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>AboutMe_CN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BB%B7%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text">1. 测试的价值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%A4%A7%E8%87%B4%E5%88%86%E4%B8%BA"><span class="nav-number">2.</span> <span class="nav-text">2. 软件开发生命周期大致分为 -</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%B5%8B%E8%AF%95%E4%BD%93%E7%8E%B0%E5%BB%BA%E8%AE%BE%E7%9A%84%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="nav-number">3.</span> <span class="nav-text">3. 测试体现建设的整体思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BD%93%E7%B3%BB%E7%9A%84%E5%BB%BA%E8%AE%BE%E5%8F%AF%E4%BB%A5%E4%BB%8E%E5%A6%82%E4%B8%8B%E5%87%A0%E4%B8%AA%E6%96%B9%E9%9D%A2-%E8%BF%87%E7%A8%8B%E6%9D%A5%E8%80%83%E9%87%8F%EF%BC%9A"><span class="nav-number">3.0.1.</span> <span class="nav-text">测试体系的建设可以从如下几个方面&#x2F;过程来考量：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%BB%BA%E7%AB%8B%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%E7%9A%84%E7%90%86%E8%AE%BA%E4%BE%9D%E6%8D%AE"><span class="nav-number">4.</span> <span class="nav-text">4. 建立测试管理体系的理论依据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CMMi%E7%9A%84%E4%BA%94%E7%BA%A7%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="nav-number">4.0.1.</span> <span class="nav-text">CMMi的五级定义：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TMMi%E7%9A%84%E4%BA%94%E7%BA%A7%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="nav-number">4.0.2.</span> <span class="nav-text">TMMi的五级定义：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%A6%82%E4%BD%95%E5%BC%80%E5%B1%95%E6%95%8F%E6%8D%B7%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%B4%BB%E5%8A%A8"><span class="nav-number">5.</span> <span class="nav-text">5. 如何开展敏捷软件测试活动</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alan.yuan</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">Total times for accessing articles -<span id="busuanzi_value_site_pv"></span>- times </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv"> Total -<span id="busuanzi_value_site_uv"></span>- visitors so far! </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

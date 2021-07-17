@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zhn-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/1171080.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/1199129.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/1171080.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="性能测试,Performance Testing,LR," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Performance 测试也是自动化测试的一个重点领域，了解和掌握这一部分内容，也是完善自动化测试技能的一个补充。Performance测试包含的内容很多，这可以从其支持的协议看出。但日常测试中往往集中在HTML，WebService等协议，这里我将以实际的测试用例来详细介绍如何利用LR（Load Runner）来实现这类Cases的性能测试。先来看几个Cases。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="性能测试之LR经典案例">
+<meta property="og:url" content="http://lelloandluck.github.io/2015/11/04/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E4%B9%8BLR%E7%BB%8F%E5%85%B8%E6%A1%88%E4%BE%8B/index.html">
+<meta property="og:site_name" content="&lt;img src&#x3D;&quot;&#x2F;images&#x2F;Icon.jpg&quot; alt&#x3D;&quot;Welcome back&quot;&gt;&lt;font face&#x3D;&#39;STCAIYUN&#39;&gt;&lt;br&#x2F;&gt;To make a difference life&lt;&#x2F;font&gt; &lt;br&#x2F;&gt;&lt;font color&#x3D;&quot;yellow&quot; size&#x3D;4&gt;Welcome to alan&#39;s blog&lt;&#x2F;font&gt;">
+<meta property="og:description" content="Performance 测试也是自动化测试的一个重点领域，了解和掌握这一部分内容，也是完善自动化测试技能的一个补充。Performance测试包含的内容很多，这可以从其支持的协议看出。但日常测试中往往集中在HTML，WebService等协议，这里我将以实际的测试用例来详细介绍如何利用LR（Load Runner）来实现这类Cases的性能测试。先来看几个Cases。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2015-11-04T12:25:36.000Z">
+<meta property="article:modified_time" content="2018-10-15T02:26:01.969Z">
+<meta property="article:author" content="Alan.yuan">
+<meta property="article:tag" content="性能测试">
+<meta property="article:tag" content="Performance Testing">
+<meta property="article:tag" content="LR">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":20,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"perspectiveRightIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":9},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lelloandluck.github.io/2015/11/04/性能测试之LR经典案例/"/>
+
+
+
+
+
+  <title>性能测试之LR经典案例 | <img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font></title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zhn-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title"><img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font></span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"><A sprint for top expert in testing></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lelloandluck.github.io/2015/11/04/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E4%B9%8BLR%E7%BB%8F%E5%85%B8%E6%A1%88%E4%BE%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="<img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font>">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">性能测试之LR经典案例</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-04T20:25:36+08:00">
+                2015-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index">
+                    <span itemprop="name">性能测试</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/Performance-Testing/" itemprop="url" rel="index">
+                    <span itemprop="name">Performance Testing</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/Performance-Testing/LR/" itemprop="url" rel="index">
+                    <span itemprop="name">LR</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Performance 测试也是自动化测试的一个重点领域，了解和掌握这一部分内容，也是完善自动化测试技能的一个补充。Performance测试包含的内容很多，这可以从其支持的协议看出。但日常测试中往往集中在HTML，WebService等协议，这里我将以实际的测试用例来详细介绍如何利用LR（Load Runner）来实现这类Cases的性能测试。先来看几个Cases。</p>
+<span id="more"></span>
+
+<h6 id="典型案例"><a href="#典型案例" class="headerlink" title="典型案例"></a>典型案例</h6><p>关于Web Service的案例，通常我们遇到最多的Cases类似于下面的步骤，这应该是Web Services的标准测试步骤了，也是PT中测试WebService最常用的步骤。先来了解下，后面再来看怎么脚本实现。</p>
+<h6 id="1-Case-One-–"><a href="#1-Case-One-–" class="headerlink" title="1. Case One –"></a>1. Case One –</h6><ul>
+<li>Step1： Get WSDL from URL、File、UDDI （<a target="_blank" rel="noopener" href="http://mdm-itg.houston.hp.com:8180/customer-">http://mdm-itg.houston.hp.com:8180/customer-</a><br>manager/services/CompetitorService?wsdl）</li>
+<li>Step2：Initialize Parameters with Customer IDs</li>
+<li>Step3：Execute Search operation to get the response</li>
+</ul>
+<h6 id="2-Case-two-–"><a href="#2-Case-two-–" class="headerlink" title="2. Case two –"></a>2. Case two –</h6><p>关于HTML的案例，这部分Cases包含的情况很多，主要是因为基于Html的操作很普遍，比喻页面登录，查找，比较，搜索等等，都是常见的测试，这里我也提炼了一些基本的步骤，不一定全面，但却是可以代表很大一部分基于Html操作的PT方案。</p>
+<ul>
+<li>Step1：Get the URL for portal</li>
+<li>Step2：Login with account</li>
+<li>Step3：Initialize with Pramenters</li>
+<li>Step4：Execute Searching and get the response</li>
+</ul>
+<p>上面两中情况的性能测试在软件测试中出现的比率很高。熟练理解和编写这类脚本可以让我们轻松对付performance测试中80%以上的Cases. （呵呵。。。别拍砖，个人就是这么认为的）</p>
+<p>这部分内容要怎么介绍呢？采取类似于AT的，一个案例一个案例的说比较乏味，也不太容易理解。因为基本上就是脚本代码重复Copy和Review。不具有参考性。还是围绕这两类Cases步骤，以及与其相关的知识点逐一展开吧。</p>
+<h6 id="脚本设计"><a href="#脚本设计" class="headerlink" title="脚本设计"></a>脚本设计</h6><p>Performance 测试不同于AT，通常我们主张用Recording的办法来录制脚本，这样做不仅可以节省时间，而且对脚本中的各种Action（如 .CSS , .Do，.Json或者Jave Script， Asp等等控件）能够很好的识别。对于脚本的维护也是显而易见的。请看下面的脚本实现。</p>
+<h6 id="For-Case-one-–"><a href="#For-Case-one-–" class="headerlink" title="For Case one – "></a><font color="red">For Case one – </font></h6><p>1.）录制WebService脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">web_service_call( &quot;StepName=customSearchLookupService_101&quot;,</span><br><span class="line">&quot;SOAPMethod=CustomerLookupEnWebServiceService|CustomerLookupEnWebSe</span><br><span class="line"> rvicePort|customSearchLookupService&quot;,</span><br><span class="line">&quot;ResponseParam=response&quot;,</span><br><span class="line">&quot;Service=CustomerLookupEnWebServiceService&quot;,</span><br><span class="line">&quot;ExpectedResponse=SoapResult&quot;,</span><br><span class="line">&quot;Snapshot=t1395726342.inf&quot;,</span><br><span class="line">BEGIN_ARGUMENTS,</span><br><span class="line">&quot;xml:customSearchLookupService1=&quot;</span><br><span class="line">    &quot;&lt;customSearchLookupService1&gt;&quot;</span><br><span class="line">        &quot;&lt;customerId&gt;&#123;CustomerId&#125;&lt;/customerId&gt;&quot;</span><br><span class="line">    &quot;&lt;/customSearchLookupService1&gt;&quot;,</span><br><span class="line">END_ARGUMENTS,</span><br><span class="line">BEGIN_RESULT,</span><br><span class="line">END_RESULT,</span><br><span class="line">LAST);</span><br></pre></td></tr></table></figure>
+<p>注意Web_Service_Call 用法,从面试的语法可知，Web_Service_Call 通常由<br>ExpectedResponse<br>specifications<br>StepName<br>参数构成，其他的都是optional. 用户可以根据实际情况选择使用。每个参数的定义可以从Help文档中查询，（F1: 查询函数用法）</p>
+<p>2.）设置Checkpoint</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">getValuefromResponse = lr_xml_find(&quot;XML=&#123;response&#125;&quot;,</span><br><span class="line">&quot;Query=/Envelope[1]/Body[1]/customSearchLookupServiceResponse[1]/customerSearchLookup ResultGroup[1]/externalProfileGroup[1]/externalProfileLocatorBusinessLocatorNumber[1]/text()[1]&quot;,</span><br><span class="line"> &quot;Value=0709898899&quot;,</span><br><span class="line"> LAST);</span><br></pre></td></tr></table></figure>
+
+<p>3.）判断Checkpoint的条件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if (getValuefromResponse == 1)&#123;</span><br><span class="line">    lr_end_transaction(&quot;RequestAndResponse&quot;, LR_PASS);</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">    lr_end_transaction(&quot;RequestAndResponse&quot;, LR_FAIL);</span><br><span class="line">&#125;</span><br><span class="line">return 0;</span><br></pre></td></tr></table></figure>
+<p>录制和设置Chekcpioint部分可以直接使用LR的界面完成，第三部需要手工编写Checkpoint条件。根据函数的语法（参见上面3.2部分内容）其实也不难完成。</p>
+<p>Note：再次体会LR C语法的基本特点，每条语句都以分号结束。小括号内的每一参数赋值均已逗号结束，并且每条语句必须以双引号引用起来。引用变量值使用大括号{ }。另外，如果双引号里的内容又是被上引号引用的，那么就需要用反斜杠 “/”进行转换。（这在LR的help文件里有详细说明）</p>
+<h6 id="For-Case-Two-–"><a href="#For-Case-Two-–" class="headerlink" title="For Case Two –"></a><font color="red">For Case Two –</font></h6><p>这部分脚本完全是手工编写的，目的就是如何利用上面介绍的函数来编写LR脚本。（如果可以录制的话，还是建议录制的办法，这里介绍的手工编写代码，仅供那些不能录制脚本的情况作为参考）</p>
+<p>1.）Login URL</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">使用”Action Function – Web_Submit_Data“函数发送URL请求</span><br><span class="line">web_submit_data(&quot;login.pl&quot;,</span><br><span class="line">    &quot;Action=https://it-services-itg.external.hp.com/auth/login.pl&quot;,</span><br><span class="line">    &quot;Method=POST&quot;,</span><br><span class="line">    &quot;RecContentType=text/html&quot;,</span><br><span class="line">    &quot;Referer=&quot;,</span><br><span class="line">    &quot;Snapshot=t5.inf&quot;,</span><br><span class="line">    &quot;Mode=HTML&quot;,</span><br><span class="line">    &quot;EncodeAtSign=YES&quot;,</span><br><span class="line">    ITEMDATA,</span><br><span class="line">    &quot;Name=action&quot;, &quot;Value=logon&quot;, ENDITEM,</span><br><span class="line">    &quot;Name=deviceos&quot;, &quot;Value=2.0.0&quot;, ENDITEM,</span><br><span class="line">    &quot;Name=devicetype&quot;, &quot;Value=TouchPad&quot;, ENDITEM,</span><br><span class="line">    &quot;Name=deviceNDUID&quot;, &quot;Value=123&quot;, ENDITEM,</span><br><span class="line">    &quot;Name=user&quot;, &quot;Value=your email address&quot;, ENDITEM,</span><br><span class="line">    &quot;Name=password&quot;, &quot;Value=your nt account&quot;, ENDITEM,</span><br><span class="line">    &quot;Name=osType&quot;, &quot;Value=WebOS&quot;, ENDITEM,</span><br><span class="line">    LAST);</span><br></pre></td></tr></table></figure>
+
+<p>注意相关参数的设置，同样可以参考Help文档设置Web_Submit_Data函数。接下来就是Search操作了，由下面的函数实现。</p>
+<p>2.）Search with the specified initialization</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">web_reg_find(&quot;Search=Body&quot;,</span><br><span class="line">    &quot;SaveCount=findcount&quot;,</span><br><span class="line">    &quot;Text=SDGT&quot;,</span><br><span class="line">    LAST);</span><br><span class="line"></span><br><span class="line"> status = web_url(&quot;rplAnywhere-web&quot;,</span><br><span class="line">    &quot;URL=https://it-services-itg.external.hp.com/onebox/rplAnywhere-</span><br><span class="line">     web_1_0_0/services/rpl?name=BIN%20LADEN&amp;countryCode=US&quot;,</span><br><span class="line">    &quot;Resource=0&quot;,</span><br><span class="line">    &quot;RecContentType=text/html&quot;,</span><br><span class="line">    &quot;Referer=&quot;,</span><br><span class="line">    &quot;Snapshot=t6.inf&quot;,</span><br><span class="line">    &quot;Mode=HTML&quot;,</span><br><span class="line">    LAST);</span><br></pre></td></tr></table></figure>
+
+<p>对照Web_URL语法，这里对三个必要参数赋值- Step Name, URL 和 Attribute list. 除了这个函数外，还可以用其他函数如 web_submit_data, web_URL 代替。他们都属于Action Function. 同样可达到发送URL请求的目的。</p>
+<p>接下来就是Checkpoint检查了，代码如下</p>
+<p>3.) Checkpoint Setting and Validation</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">lr_output_message(&quot;request status :%d&quot;, status);</span><br><span class="line">lr_output_message(&quot;find count :%d&quot;, atoi(lr_eval_string(&quot;&#123;findcount&#125;&quot;)));</span><br><span class="line"></span><br><span class="line">if (atoi(lr_eval_string(&quot;&#123;findcount&#125;&quot;)) &gt; 0)&#123;//check the times of finding &#x27;SDGT&#x27; string</span><br><span class="line">        lr_output_message(&quot;found the value at the return page&quot;);</span><br><span class="line">        lr_end_transaction(&quot;AdhocSearching&quot;, LR_PASS);</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        lr_output_message(&quot;found fail&quot;);</span><br><span class="line">        lr_end_transaction(&quot;AdhocSearching&quot;, LR_FAIL);                </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">return 0;</span><br></pre></td></tr></table></figure>
+<p>此处的函数的理解可参考上面的解析。这里不再重复了。到此为止，两种案例的代码实现介绍完毕，是不是还是感觉云里雾里？很正常，这主要是因为LR的C实现函数参数太多，而且使用起来也不是很有感觉。</p>
+<p>比喻说调用Web_Custom_request函数发送URL请求。那么函数Web_Custom_request到底该参数化哪些参数？每个参数的值该如何获取？还是没有一个直观的认识。这也是你尽管看了上面那些函数解析后后任然不知所措的根本所在。这是个难点。但我们有办法破解 </p>
+<ul>
+<li><p>方法一： 如何识别哪些方法需要被Action Function提取这是手工开发LR代码的必要步骤，你首先要知道哪些页面方法需要被Action Function提取，找出这些方法，然后调用Action Function函数予以实现。难就难在找出这些方法上。看好下面的介绍，解决上面问题的solution就要出来了 – 进入相关页面，进入代码视图，进入Network视图，反复操作页面，看哪些方法的response是关联下一个步骤的。把这些方法提出来，一 一调用Action Function 函数予以实现。 好了这就是要领 。(这里主要是针对record困难的Chrome环境。 按F12进入)不知道？还是不知道？那你打开一个GUI界面（IE或者Chrome都可以）进入代码视图模式，反复进行页面操作（如login），然后在Network视图里看看哪些方法被识别出来了，再看看这些方法的response，有哪些跟下一步骤的界面相关就提出来。这就是Action Function的函数要去实现的步骤。就这么简单。实在不会的话，就按照上面的介绍反复操练吧，知道熟练找出页面方法为止。</p>
+</li>
+<li><p>方法二： 如何识别哪些方法需要被Action Function提取请使用第三方工具来帮助提取。这里推荐使用Fiddler工具，这个工具可以很方便的看出页面操作对象以及方法属性。用它可以提高我们的代码开发效率，有兴趣的童鞋不妨试试。个人感觉还是不错的。使用它可以帮我们快速找出页面相关元素，以及相应方法，找到这些方法和元素后，跟方法 一 一样，我们需要将这些方法和元素以函数的形式表述出来。<br>这就是LR C脚本开发应该遵行的规则。当然如果能record的话，还是建议大家record。毕竟系统自动抓出的方法和属性要比手工去添加的来得快和准。</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/QRcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
+    <div>subscribe my blog by scanning this QR code</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixinincome.GIF" alt=" WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/Alipayincome.GIF" alt=" Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag"># 性能测试</a>
+          
+            <a href="/tags/Performance-Testing/" rel="tag"># Performance Testing</a>
+          
+            <a href="/tags/LR/" rel="tag"># LR</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/26/%E5%9F%BA%E4%BA%8EOutlook%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC%E8%AE%BE%E8%AE%A1/" rel="next" title="基于Outlook的自动化脚本设计">
+                <i class="fa fa-chevron-left"></i> 基于Outlook的自动化脚本设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/08/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E4%BF%AE%E7%82%BC%E4%B9%8BAgile%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/" rel="prev" title="测试管理修炼之Agile开发模式">
+                测试管理修炼之Agile开发模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  <div>
+      
+          <div> 
+	 
+		<div style="text-align:center;color: #ccc;font-size:14px;padding-top:2px"> 			
+			-------------本文结束 <i class="fa fa-paw"> </i> 感谢您的阅读------------- 
+		</div> 
+	 
+</div>
+
+      
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar1.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+                <a href="/archives">
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:alan_yuan009@live.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.wechat.com/zh_HK" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-wechat"></i>Wechat</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/Alan_CV_EN_LatestUpdate.pdf" target="_blank" title="AboutMe_EN">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>AboutMe_EN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/Alan_CV_CN_LatestUpdate.pdf" target="_blank" title="AboutMe_CN">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>AboutMe_CN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E6%A1%88%E4%BE%8B"><span class="nav-number">1.</span> <span class="nav-text">典型案例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-Case-One-%E2%80%93"><span class="nav-number">2.</span> <span class="nav-text">1. Case One –</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-Case-two-%E2%80%93"><span class="nav-number">3.</span> <span class="nav-text">2. Case two –</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E8%AE%BE%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">脚本设计</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#For-Case-one-%E2%80%93"><span class="nav-number">5.</span> <span class="nav-text">For Case one – </span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#For-Case-Two-%E2%80%93"><span class="nav-number">6.</span> <span class="nav-text">For Case Two –</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alan.yuan</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">Total times for accessing articles -<span id="busuanzi_value_site_pv"></span>- times </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv"> Total -<span id="busuanzi_value_site_uv"></span>- visitors so far! </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

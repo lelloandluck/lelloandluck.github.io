@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+    #header {
+        background-color:black;
+        color:white;
+        text-align:left;
+        padding:5px;
+        font-family:Gill Sans MT;
+        font-size:22px
+    }
+
+    #reportZone{
+        width:1550px;
+        <!--这个可以取消，不影响效果 -->
+        align:left;
+        padding:5px;
+        font-family:Gill Sans MT;
+        font-size:12px	 	 
+    }
+    
+    .anotherProject{
+        background-color:black;
+        color:white;
+        text-align:left;
+        padding:5px;
+        font-family:Gill Sans MT;
+        font-size:20px
+    }
+
+    #footer {
+        background-color:black;
+        color:white;
+        font-family:Gill Sans MT;
+        font-size:9px
+        text-align:left;
+        padding:2px;
+    }
+    
+    # for the animal text -
+    @keyframes blink{
+    0%{opacity: 1;}
+    50%{opacity: 1;}
+    50.01%{opacity: 0;}
+    100%{opacity: 0;}
+    }
+    @-webkit-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+    }
+    @-moz-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+    }
+    @-ms-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+    }
+    @-o-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+    }
+    .blink{
+    animation: blink .85s linear ease-in;
+    -webkit-animation: blink .75s ease-out infinite;
+    -moz-animation: blink .55s ease-out infinite;
+    -ms-animation: blink .65s ease-out infinite;
+    -o-animation: blink .45s ease-out infinite;
+    color: #F00;
+    font-size:18px;
+    }
+
+    </style>
+    </head>
+    
+    <body>
+    <div id="header">
+    <h2><hr/>
+
+    测试线阶段工作汇总 - Apr. ~ Jul.<hr/></h2>
+    </div>
+
+    <div id="reportZone">
+      <br>
+    <h3> >>>截止目前，统计有 <span class="blink" >349 </span>Pcs 测试用例输出  - </h3><iframe src=".\1_ResourceforRetro\render1.html" marginheight="2px" marginwidth="2px" width="1200" height = "500" frameborder="0"></iframe><br/><h3> >>>截止目前，统计有 <span class="blink" >372 </span>Hours 工时节省  - </h3><iframe src=".\1_ResourceforRetro\render2.html" marginheight="2px" marginwidth="2px" width="1200" height = "500" frameborder="0"></iframe><br/><h3> >>>截止目前，统计有 <span class="blink" >114 </span>Pcs bug 被发现  - </h3><iframe src=".\1_ResourceforRetro\render3.html" marginheight="2px" marginwidth="2px" width="1200" height = "500" frameborder="0"></iframe><br/></div>
+
+    <div id="footer">
+    <p>&nbsp Copyright © GDS_TestCenter@163.com. All rights reserved. This consolidation based on our test outputs, and the datum come from Jira and Testlink, it's real and valid. Consolidated here, just want you know more about our Test line, sincerely hope the effort we contributed is indeed to relief you.</p>
+    </div>
+
+    </body>
+    </html>
+    

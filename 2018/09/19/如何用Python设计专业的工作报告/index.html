@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zhn-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/1171080.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/1199129.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/1171080.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python开发,python测试,python echart," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="先来看下实例，这是我制作的月&#x2F;季报模式，喜欢的话举个爪吧 ~~瞧瞧去！ 设计思路：   收集整理数据 -&gt; 将数据转换为Python Echart图表 -&gt; 设计Html报告页，将echart图标统一展示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用Python设计专业的工作报告">
+<meta property="og:url" content="http://lelloandluck.github.io/2018/09/19/%E5%A6%82%E4%BD%95%E7%94%A8Python%E8%AE%BE%E8%AE%A1%E4%B8%93%E4%B8%9A%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/index.html">
+<meta property="og:site_name" content="&lt;img src&#x3D;&quot;&#x2F;images&#x2F;Icon.jpg&quot; alt&#x3D;&quot;Welcome back&quot;&gt;&lt;font face&#x3D;&#39;STCAIYUN&#39;&gt;&lt;br&#x2F;&gt;To make a difference life&lt;&#x2F;font&gt; &lt;br&#x2F;&gt;&lt;font color&#x3D;&quot;yellow&quot; size&#x3D;4&gt;Welcome to alan&#39;s blog&lt;&#x2F;font&gt;">
+<meta property="og:description" content="先来看下实例，这是我制作的月&#x2F;季报模式，喜欢的话举个爪吧 ~~瞧瞧去！ 设计思路：   收集整理数据 -&gt; 将数据转换为Python Echart图表 -&gt; 设计Html报告页，将echart图标统一展示">
+<meta property="og:locale">
+<meta property="og:image" content="http://lelloandluck.github.io/images/pythonEchart.png">
+<meta property="article:published_time" content="2018-09-19T04:00:30.000Z">
+<meta property="article:modified_time" content="2018-10-15T02:26:01.969Z">
+<meta property="article:author" content="Alan.yuan">
+<meta property="article:tag" content="Python开发">
+<meta property="article:tag" content="python测试">
+<meta property="article:tag" content="python echart">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lelloandluck.github.io/images/pythonEchart.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":20,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"perspectiveRightIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":9},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lelloandluck.github.io/2018/09/19/如何用Python设计专业的工作报告/"/>
+
+
+
+
+
+  <title>如何用Python设计专业的工作报告 | <img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font></title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zhn-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title"><img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font></span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"><A sprint for top expert in testing></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lelloandluck.github.io/2018/09/19/%E5%A6%82%E4%BD%95%E7%94%A8Python%E8%AE%BE%E8%AE%A1%E4%B8%93%E4%B8%9A%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="<img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font>">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何用Python设计专业的工作报告</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-19T12:00:30+08:00">
+                2018-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python%E8%87%AA%E5%8A%A8%E5%8C%96/" itemprop="url" rel="index">
+                    <span itemprop="name">python自动化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>先来看下实例，这是我制作的月/季报模式，喜欢的话举个爪吧 ~~<br><font size="14"><a href="/images/Retro.report/retrospective_Report.html">瞧瞧去！</a></p>
+<p><font face="微软雅黑" color="red" size="3">设计思路：</p>
+<ul>
+<li><font face="Gill Sans MT" color=#B20000> 收集整理数据 -&gt; 将数据转换为Python Echart图表 -&gt; 设计Html报告页，将echart图标统一展示</li>
+<li><img src="/images/pythonEchart.png" alt="设计思路"></li>
+</ul>
+<span id="more"></span>
+
+<p>这里重点还是Python Echart图表的使用上，废话不说，直接上步骤吧 -</p>
+<ol>
+<li>安装python （这个不用我多说了吧 ~~）</li>
+<li>安装python pip (这个一般在安装python时会一并安装的，pip类似于node.js的npm，是python的一个包安装器，有了它会省去我们安装python的不少麻烦，至少不用单独下载安装包)</li>
+<li>安装echart （pip install pyechart）</li>
+<li>调用echart图标（下面详细说说这个的用法）</li>
+</ol>
+<p>Python Echart 使用详解</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">from pyecharts import Bar, Line, Grid, Overlap, EffectScatter, Pie</span><br><span class="line"></span><br><span class="line">&#x27;&#x27;&#x27; 1. *** 测试项目TCs 统计</span><br><span class="line">&gt;&gt;  下图实例找齐了Pie, Bar, Line 图常用的修改参数，请参考</span><br><span class="line">&gt;&gt;  下面各图表的参数设置，实际使用中并不是全部必须的，列在这里仅供参考</span><br><span class="line">***&#x27;&#x27;&#x27;</span><br><span class="line"># from pyecharts import Bar, Line, Pie, Overlap, EffectScatter</span><br><span class="line">attr1 = [&#x27;DEVDCMODULEMGT&#x27;, &#x27;GDS Service Portal AT&#x27;, &#x27;GDS运维管理&#x27;, &#x27;PPM Release1 AT&#x27;, &#x27;DCFM告警单验证AT&#x27;, &#x27;ECC集控中心&#x27;, &#x27;PPM Release2&#x27;, &#x27;CRS客户服务系统&#x27;] # 测试项目</span><br><span class="line">val1 = [59, 1, 7, 4, 2, 276, 0, 0] # 各项目测试用例设计量pcs</span><br><span class="line"></span><br><span class="line">pie = Pie(&quot;TC Outputs Statistic&quot;, &quot;各项目测试用例统计&quot;, width = 1200, height = 500) # title_pos=&quot;center&quot;</span><br><span class="line">pie.add(&quot;TCs Output (单位:个)&quot;, attr1, val1,</span><br><span class="line">        legend_pos=&quot;2%&quot;, #  legend_pos : 图例位置 right, center, left, bottom, or X%</span><br><span class="line">        legend_top=&quot;25%&quot;,</span><br><span class="line">        is_label_show=True,</span><br><span class="line">        is_legend_show=True,</span><br><span class="line">        is_more_utils=True,</span><br><span class="line">        label_text_color=None, # &#x27;red&#x27; or &#x27;green&#x27;, ....</span><br><span class="line">        legend_orient=&#x27;vertical&#x27;, # legend_orient=&#x27;vertical&#x27; or &#x27;horizontal&#x27;</span><br><span class="line">        radius=[30, 65], #环形内外圆的半径</span><br><span class="line">        is_label_emphasis=True,</span><br><span class="line">        legend_text_size=12,</span><br><span class="line">        # width=1200, -- 这里定义width和height对整体图示不起作用，应该在调用图示对象时定义</span><br><span class="line">        # height=600,</span><br><span class="line">        # rosetype=&#x27;radius&#x27;, # 有&#x27;radius&#x27;和&#x27;area&#x27;两种模式, radius：扇区圆心角展现数据的百分比，半径展现数据的大小。 area：所有扇区圆心角相同，仅通过半径展现数据大小。</span><br><span class="line">        center=[50, 52], # 饼图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标，默认为 [50, 50]</span><br><span class="line">        legend_selectedmode=True, # 对图例点选操作禁止或打开</span><br><span class="line">)</span><br><span class="line">pie.render(&quot;1_ResourceforRetro/render1.html&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x27;&#x27;&#x27; 2. *** 测试项目effort 统计 ***&#x27;&#x27;&#x27;</span><br><span class="line"># from pyecharts import Bar, Line, Pie, Overlap</span><br><span class="line">attr2 = [&#x27;DEVDCMODULEMGT&#x27;, &#x27;GDS Service Portal AT&#x27;, &#x27;GDS运维管理&#x27;, &#x27;PPM Release1 AT&#x27;, &#x27;DCFM告警单验证AT&#x27;, &#x27;ECC集控中心&#x27;, &#x27;PPM Release2&#x27;, &#x27;CRS客户服务系统&#x27;]</span><br><span class="line">val2= [72, 16, 8, 24, 32, 220, 0, 0] # unit：hours</span><br><span class="line"></span><br><span class="line">bar = Bar(&quot;Test Effort Statistic&quot;, &quot;各项目测试工时统计&quot;, width = 1200, height = 500)</span><br><span class="line">bar.add(&quot;工时 (单位:小时)&quot;, attr2, val2, is_more_utils=True,</span><br><span class="line">        is_label_show=True,</span><br><span class="line">        legend_pos=&quot;right&quot;,</span><br><span class="line">        legend_top=&quot;5%&quot;,</span><br><span class="line">        width = 1200,</span><br><span class="line">        height = 600,</span><br><span class="line">        bar_category_gap=&quot;60%&quot;,</span><br><span class="line">        mark_point=[&#x27;max&#x27;, &#x27;min&#x27;], # or &#x27;average&#x27;</span><br><span class="line">        mark_line=[&#x27;max&#x27;],</span><br><span class="line">        is_datazoom_show=True,</span><br><span class="line">        is_label_emphasis=True,</span><br><span class="line">)</span><br><span class="line">bar.render(&quot;1_ResourceforRetro/render2.html&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x27;&#x27;&#x27; 3. *** 测试项目Bugs 统计 ***&#x27;&#x27;&#x27;</span><br><span class="line"># from pyecharts import Bar, Line, Pie, Overlap</span><br><span class="line">attr3 = [&#x27;DEVDCMODULEMGT&#x27;, &#x27;GDS Service Portal AT&#x27;, &#x27;GDS运维管理&#x27;, &#x27;PPM Release1 AT&#x27;, &#x27;DCFM告警单验证AT&#x27;, &#x27;ECC集控中心&#x27;, &#x27;PPM Release2&#x27;, &#x27;CRS客户服务系统&#x27;]</span><br><span class="line">val3 = [28, 0, 3, 4, 0, 79, 0, 0] # unit: pcs</span><br><span class="line"></span><br><span class="line">line = Line(&quot;Test Bug Statistic&quot;, &quot;各项目测试bug统计&quot;, width = 1200, height = 500)</span><br><span class="line">line.add(&quot;Bug (单位:个)&quot;, attr3, val3, is_more_utils=True,</span><br><span class="line">         # is_label_show=True,</span><br><span class="line">         # is_step=True,</span><br><span class="line">         yaxis_name=u&quot;Bug 个数&quot;,</span><br><span class="line">         # xaxis_name=&quot;项目&quot;,</span><br><span class="line">         # xaxis_margin=5,</span><br><span class="line">         # xaxis_name_pos=&quot;80%&quot;,</span><br><span class="line">         # is_radiusaxis_show=True,</span><br><span class="line">         is_area_show= True,</span><br><span class="line">         label_text_size=10,</span><br><span class="line">         # label_color=&quot;#12F23&quot;,</span><br><span class="line">         legend_pos=&quot;right&quot;,</span><br><span class="line">         legend_top=&quot;5%&quot;,</span><br><span class="line">         mark_point=[&#x27;max&#x27;, &#x27;min&#x27;, &#x27;average&#x27;], # or &#x27;average&#x27;</span><br><span class="line">         mark_point_symbol=&#x27;arrow&#x27;, # or &#x27;arrow&#x27;</span><br><span class="line">         # mark_point_symbolsize=10,</span><br><span class="line">         mark_point_textcolor=&#x27;yellow&#x27;,</span><br><span class="line">         mark_line=[&#x27;max&#x27;],</span><br><span class="line">         mark_line_symbolsize=10,</span><br><span class="line">         line_width=5,</span><br><span class="line">         # line_type=5,</span><br><span class="line">         line_color=&#x27;green&#x27;,</span><br><span class="line">         area_opacity=0.8,</span><br><span class="line">         line_opacity=0.4,</span><br><span class="line">         symbol_size=3,</span><br><span class="line">         # is_datazoom_show=True,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">es = EffectScatter(&quot;&quot;, width = 1200, height = 500)</span><br><span class="line">es.add(&quot;Bug statistic&quot;, attr3, val3,</span><br><span class="line">       symbol_size= 20,</span><br><span class="line">       effect_scale= 3.6,</span><br><span class="line">       effect_period= 3,</span><br><span class="line">       symbol= &quot;pin&quot;,</span><br><span class="line">       is_label_show= True,</span><br><span class="line">       label_color=&quot;red&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">bar1 = Bar(&quot;&quot;, width = 1000, height = 400)</span><br><span class="line">bar1.add(&quot;&quot;, attr3, val3, is_label_show=True, bar_category_gap=&quot;40%&quot;)</span><br><span class="line"></span><br><span class="line">overlap = Overlap(&quot;&quot;, width = 1200, height = 500)</span><br><span class="line">overlap.add(line)</span><br><span class="line">overlap.add(es)</span><br><span class="line"># overlap.add(bar)</span><br><span class="line">overlap.render(&quot;1_ResourceforRetro/render3.html&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">使用Grid（）对象可以将python chart图并列编排，需要注意的是gird_left, right, height, width 参数的设置，由此引起的各chart图参数设置的调整，建议不要用百分比，这个容易引起显示错位</span><br><span class="line">下图被注释的代码基本达到了希望的效果</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+<p>每一个图标的render语句会在当前脚本目录下生成一个该图标的html报告，如 - render(“1_ResourceforRetro/render3.html”)，此路径可自定义，默认是当前脚本路径，报告格式是html，不可改成其他类型。</p>
+<p>获得了需要的图表报告后，接下来就是要将这些报告统一汇总在一张自定义的html文件中，下面是我上面demo图例中的自定义的html文件，不喜勿喷 @@@</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">import os, sys</span><br><span class="line">from Common_Functions_Consolidation import *</span><br><span class="line"></span><br><span class="line">#1. create new path for retrosepective report and retrospective report will locate on the sme path with the scripts</span><br><span class="line"># **********************************************************************************************************************************************************</span><br><span class="line">scriptPath = os.getcwd()</span><br><span class="line">reportFilePath = os.path.join(scriptPath, &quot;retrospective_Report.html&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#2. Validate the folder &#x27;&#x27;htmlReport and see if it is being there already</span><br><span class="line"># **********************************************************************************************************************************************************</span><br><span class="line">print os.path.isdir(&quot;1_ResourceforRetro&quot;) # 文件夹名称是不分大小写的</span><br><span class="line">if os.path.isdir(&quot;1_ResourceforRetro&quot;) == False:</span><br><span class="line">    print &quot;There is no folder of &#x27;1_ResourceforRetro&#x27; there, please ensure you got this folder first before running this script!&quot;</span><br><span class="line">    sys.exit()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#3. Define retrospective report form by python</span><br><span class="line"># **********************************************************************************************************************************************************</span><br><span class="line"></span><br><span class="line">reload(sys) # 这两句对字符一起可改变解析的字符编码风格</span><br><span class="line">sys.setdefaultencoding(&quot;utf-8&quot;) # 这两句对字符一起可改变解析的字符编码风格</span><br><span class="line"></span><br><span class="line">#3.1 define html header part of this report -</span><br><span class="line">#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">reportTitle = &quot;测试线阶段工作汇总 - Apr. ~ Jul.&quot;</span><br><span class="line">pythonWriteHtml_to_File_Part1(reportFilePath, reportTitle)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#3.2 define html body part which comes from &#x27;htmlReport&#x27; of this report -</span><br><span class="line">#  --------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">pythonWriteHtml_to_htmlReport(scriptPath, reportFilePath)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># #3.3 define html body part which comes from &#x27;htmlReport_1&#x27; of this report -</span><br><span class="line"># #  --------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line"># anotherProjectName = &quot;DCFM 告警单重构&quot;</span><br><span class="line"># addSecondProjectReport_Header(reportFilePath, anotherProjectName)</span><br><span class="line"># addSecondProjectReport_Body(scriptPath, reportFilePath)</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">#4 define html ending part of this report -</span><br><span class="line">#  --------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">python_WriteHtml_to_File_Part2(reportFilePath)</span><br></pre></td></tr></table></figure>
+
+<p>这是上面代码中引用的包（Common_Functions_Consolidation）的相关函数实现-</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br></pre></td><td class="code"><pre><span class="line">def pythonWriteHtml_to_File_Part1(reportFilePath, reportTitle):</span><br><span class="line">    # reportFilePath 是一个.html文件，这个文件通常由调用脚本生成</span><br><span class="line">    fo = open(reportFilePath, &quot;w+&quot;)  # 打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</span><br><span class="line">    # f.write(&quot;&lt;!DOCTYPE html&gt;\n&quot;)</span><br><span class="line">    # f.write(&quot;&lt;h1&gt;alan&lt;/h1&gt;&quot;)</span><br><span class="line">    # f.close()</span><br><span class="line"></span><br><span class="line">    htmlText = &quot;&quot;&quot;&lt;!DOCTYPE html&gt;</span><br><span class="line">    &lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    #header &#123;</span><br><span class="line">        background-color:black;</span><br><span class="line">        color:white;</span><br><span class="line">        text-align:left;</span><br><span class="line">        padding:5px;</span><br><span class="line">        font-family:Gill Sans MT;</span><br><span class="line">        font-size:22px</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #reportZone&#123;</span><br><span class="line">        width:1550px;</span><br><span class="line">        &lt;!--这个可以取消，不影响效果 --&gt;</span><br><span class="line">        align:left;</span><br><span class="line">        padding:5px;</span><br><span class="line">        font-family:Gill Sans MT;</span><br><span class="line">        font-size:12px	 	 </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .anotherProject&#123;</span><br><span class="line">        background-color:black;</span><br><span class="line">        color:white;</span><br><span class="line">        text-align:left;</span><br><span class="line">        padding:5px;</span><br><span class="line">        font-family:Gill Sans MT;</span><br><span class="line">        font-size:20px</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #footer &#123;</span><br><span class="line">        background-color:black;</span><br><span class="line">        color:white;</span><br><span class="line">        font-family:Gill Sans MT;</span><br><span class="line">        font-size:9px</span><br><span class="line">        text-align:left;</span><br><span class="line">        padding:2px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    # for the animal text -</span><br><span class="line">    @keyframes blink&#123;</span><br><span class="line">    0%&#123;opacity: 1;&#125;</span><br><span class="line">    50%&#123;opacity: 1;&#125;</span><br><span class="line">    50.01%&#123;opacity: 0;&#125;</span><br><span class="line">    100%&#123;opacity: 0;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    @-webkit-keyframes blink &#123;</span><br><span class="line">    0% &#123; opacity: 1; &#125;</span><br><span class="line">    50% &#123; opacity: 1; &#125;</span><br><span class="line">    50.01% &#123; opacity: 0; &#125;</span><br><span class="line">    100% &#123; opacity: 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    @-moz-keyframes blink &#123;</span><br><span class="line">    0% &#123; opacity: 1; &#125;</span><br><span class="line">    50% &#123; opacity: 1; &#125;</span><br><span class="line">    50.01% &#123; opacity: 0; &#125;</span><br><span class="line">    100% &#123; opacity: 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    @-ms-keyframes blink &#123;</span><br><span class="line">    0% &#123; opacity: 1; &#125;</span><br><span class="line">    50% &#123; opacity: 1; &#125;</span><br><span class="line">    50.01% &#123; opacity: 0; &#125;</span><br><span class="line">    100% &#123; opacity: 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    @-o-keyframes blink &#123;</span><br><span class="line">    0% &#123; opacity: 1; &#125;</span><br><span class="line">    50% &#123; opacity: 1; &#125;</span><br><span class="line">    50.01% &#123; opacity: 0; &#125;</span><br><span class="line">    100% &#123; opacity: 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .blink&#123;</span><br><span class="line">    animation: blink .85s linear ease-in;</span><br><span class="line">    -webkit-animation: blink .75s ease-out infinite;</span><br><span class="line">    -moz-animation: blink .55s ease-out infinite;</span><br><span class="line">    -ms-animation: blink .65s ease-out infinite;</span><br><span class="line">    -o-animation: blink .45s ease-out infinite;</span><br><span class="line">    color: #F00;</span><br><span class="line">    font-size:18px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;header&quot;&gt;</span><br><span class="line">    &lt;h2&gt;&lt;hr/&gt;</span><br><span class="line"></span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fo.write(htmlText)</span><br><span class="line">    fo.close()</span><br><span class="line"></span><br><span class="line">    fo = open(reportFilePath, &quot;a&quot;)  # 打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</span><br><span class="line">    fo.write(reportTitle)</span><br><span class="line"></span><br><span class="line">    htmlText = &quot;&quot;&quot;&lt;hr/&gt;&lt;/h2&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;reportZone&quot;&gt;</span><br><span class="line">      &lt;br&gt;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fo.write(htmlText)</span><br><span class="line">    fo.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">#  Purpose - 定义html的尾部div 代码部分</span><br><span class="line">#  Notice - 该文件夹和脚本是在同一目录下的</span><br><span class="line">#  Date - 2018. 06.16</span><br><span class="line">#  Author - Alan.yuan</span><br><span class="line">#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">def python_WriteHtml_to_File_Part2(reportFilePath):</span><br><span class="line">    # reportFilePath 是一个.html文件，这个文件通常由调用脚本生成</span><br><span class="line">    fo = open(reportFilePath, &#x27;a&#x27;)</span><br><span class="line">    htmlText = &quot;&quot;&quot;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;footer&quot;&gt;</span><br><span class="line">    &lt;p&gt;&amp;nbsp Copyright © GDS_TestCenter@163.com. All rights reserved. This consolidation based on our test outputs, and the datum come from Jira and Testlink, it&#x27;s real and valid. Consolidated here, just want you know more about our Test line, sincerely hope the effort we contributed is indeed to relief you.&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;/html&gt;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fo.write(htmlText)</span><br><span class="line">    fo.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">#  Purpose - 检查文件夹是否存在，如果存在就移除里面所有的文件， 注意是移除里面所有的文件，不是文件夹；如果该文件夹不存在，则创建该文件夹</span><br><span class="line">#  Notice - 该文件夹和脚本是在同一目录下的</span><br><span class="line">#  Date - 2018. 06.16</span><br><span class="line">#  Author - Alan.yuan</span><br><span class="line">#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">def checkFolder_and_RemoveAllFilesIncluded(folderName):</span><br><span class="line">#该函数检当前脚本目录下是否有制定的folder，如果没有则创建该folder；如果有则进入该folder删除里面所有的文件（注意是文件，不是文件夹）</span><br><span class="line">    import os, sys</span><br><span class="line">    if os.path.exists(os.getcwd() + &quot;\\&quot; + folderName) == True: # folderName - 指的是第一个存储测试报告文件夹 “htmlReport”</span><br><span class="line">        for file_Name in os.listdir(os.getcwd() + &quot;\\&quot; + folderName): # os.listdir(os.getcwd() + &quot;\htmlReport&quot;) - 该文件夹下包含的文件list</span><br><span class="line">            path_File = os.path.join(os.getcwd() + &quot;\\&quot; + folderName, file_Name)</span><br><span class="line">            if os.path.isfile(path_File):</span><br><span class="line">                os.remove(path_File)</span><br><span class="line">    else:</span><br><span class="line">        os.makedirs(os.getcwd() + &quot;\\&quot; + folderName)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">#  Purpose - 添加视图到body区，主要是&lt;image&gt; ... &lt;/image&gt; 部分代码</span><br><span class="line">#  Notice - 该文件夹和脚本是在同一目录下的</span><br><span class="line">#  Date - 2018. 06.16</span><br><span class="line">#  Author - Alan.yuan</span><br><span class="line">#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">def pythonWriteHtml_to_htmlReport(scriptPath, reportFilePath, listVal, listUnit):</span><br><span class="line">    htmlTextB = &quot;&quot;&quot;&lt;iframe src=\&quot;&quot;&quot;&quot;</span><br><span class="line">    htmlTextE = &quot;&quot;&quot;&quot; marginheight=&quot;2px&quot; marginwidth=&quot;2px&quot; width=&quot;1200&quot; height = &quot;500&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;&lt;br/&gt;&quot;&quot;&quot;</span><br><span class="line">    i = 0</span><br><span class="line">    dirs = os.listdir(scriptPath + &quot;\\1_ResourceforRetro&quot;)</span><br><span class="line">    for dir in dirs:</span><br><span class="line">        if os.path.isfile(os.path.join(scriptPath + &quot;\\1_ResourceforRetro&quot;, dir)):</span><br><span class="line">            fo = open(reportFilePath, &quot;a&quot;)</span><br><span class="line">            fo.write(&quot;&lt;h3&gt; &gt;&gt;&gt;截止目前，统计有 &lt;span class=\&quot;blink\&quot; &gt;%s &lt;/span&gt;%s  - &lt;/h3&gt;&quot;%(listVal[i], listUnit[i])) # listVal, listUnit元素个数必须和html 文件数相等，否则报溢出错误</span><br><span class="line">            # fo.write(&quot;&lt;span style=\&quot;border-color: green; border-width: 1px; border-style: solid; border-radius: 1px;\&quot;&gt;&quot;)</span><br><span class="line">            fo.write(htmlTextB)</span><br><span class="line">            fo.write(&quot;.\\1_ResourceforRetro\\&quot; + dir)</span><br><span class="line">            fo.write(htmlTextE)</span><br><span class="line">            fo.close()</span><br><span class="line">            i += 1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">#  Purpose - 添加第二个项目的html代码，主要是展示项目名称的&lt;div&gt; ... &lt;/idiv&gt; 部分代码</span><br><span class="line">#  Notice - 该文件夹和脚本是在同一目录下的</span><br><span class="line">#  Date - 2018. 06.16</span><br><span class="line">#  Author - Alan.yuan</span><br><span class="line">#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">def addSecondProjectReport_Header(reportFilePath, anotherProjectName):</span><br><span class="line">    htmlHeard_2B = &quot;&quot;&quot;&lt;br/&gt;&lt;/div&gt;</span><br><span class="line">    &lt;!--Adding new project / task --&gt;</span><br><span class="line">    &lt;!--hr style = &quot;height:0px; border:none; border-top:10px solid #55555;&quot;/ --&gt;</span><br><span class="line">    &lt;hr style=&quot;height:0px;border:none;border-top:10px groove skyblue;&quot; /&gt;</span><br><span class="line">    &lt;div class = &quot;anotherProject&quot;&gt;&lt;b&gt;&quot;&quot;&quot;</span><br><span class="line">    htmlHeard_2E = &quot;&quot;&quot;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    fo = open(reportFilePath, &quot;a&quot;)</span><br><span class="line">    fo.write(htmlHeard_2B)</span><br><span class="line">    fo.write(anotherProjectName)</span><br><span class="line">    fo.write(htmlHeard_2E)</span><br><span class="line">    fo.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">#  Purpose - 添加第二个项目的html代码，主要是图示的&lt;image&gt; ... &lt;/image&gt; 部分代码</span><br><span class="line">#  Notice - 该文件夹和脚本是在同一目录下的</span><br><span class="line">#  Date - 2018. 06.16</span><br><span class="line">#  Author - Alan.yuan</span><br><span class="line">#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">def addSecondProjectReport_Body(scriptPath, reportFilePath):</span><br><span class="line">    html2B = &quot;&quot;&quot;&lt;iframe src=\&quot; &quot;&quot;&quot;</span><br><span class="line">    html2E = &quot;&quot;&quot;&quot;marginheight=&quot;20px&quot; marginwidth=&quot;50px&quot; width=&quot;1450&quot; height = &quot;550&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;&lt;br/&gt;&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    dirs = os.listdir(scriptPath + &quot;\htmlReport_1&quot;)</span><br><span class="line">    for dir in dirs:</span><br><span class="line">        if os.path.isfile(os.path.join(scriptPath + &quot;\htmlReport_1&quot;, dir)):</span><br><span class="line">            fo = open(reportFilePath, &quot;a&quot;)</span><br><span class="line">            fo.write(html2B)</span><br><span class="line">            fo.write(&quot;.\htmlReport_1\\&quot; + dir)</span><br><span class="line">            fo.write(html2E)</span><br><span class="line">            fo.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/QRcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
+    <div>subscribe my blog by scanning this QR code</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixinincome.GIF" alt=" WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/Alipayincome.GIF" alt=" Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python%E5%BC%80%E5%8F%91/" rel="tag"># Python开发</a>
+          
+            <a href="/tags/python%E6%B5%8B%E8%AF%95/" rel="tag"># python测试</a>
+          
+            <a href="/tags/python-echart/" rel="tag"># python echart</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/17/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E4%BF%AE%E7%82%BC%E4%B9%8B%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0Testlink/" rel="next" title="测试管理修炼之搭建测试管理平台Testlink">
+                <i class="fa fa-chevron-left"></i> 测试管理修炼之搭建测试管理平台Testlink
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/22/Python-%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E7%A0%94%E7%A9%B6/" rel="prev" title="Python 测试报告研究">
+                Python 测试报告研究 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  <div>
+      
+          <div> 
+	 
+		<div style="text-align:center;color: #ccc;font-size:14px;padding-top:2px"> 			
+			-------------本文结束 <i class="fa fa-paw"> </i> 感谢您的阅读------------- 
+		</div> 
+	 
+</div>
+
+      
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar1.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+                <a href="/archives">
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:alan_yuan009@live.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.wechat.com/zh_HK" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-wechat"></i>Wechat</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/Alan_CV_EN_LatestUpdate.pdf" target="_blank" title="AboutMe_EN">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>AboutMe_EN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/Alan_CV_CN_LatestUpdate.pdf" target="_blank" title="AboutMe_CN">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>AboutMe_CN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alan.yuan</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">Total times for accessing articles -<span id="busuanzi_value_site_pv"></span>- times </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv"> Total -<span id="busuanzi_value_site_uv"></span>- visitors so far! </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

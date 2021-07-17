@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zhn-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic|Gill Sans MT:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/1171080.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/1199129.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/1171080.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="上一篇文章中重点介绍了Python的函数及其使用场景，这篇文章将重点放在Python类及文件操作上，也是通过简单的实例加强对类的认知。类是面向对象编程的一个根本，使用面向对象编程可模拟现实情景，其逼真程度达到了令你惊讶的地步。这也是面向对象编程的魅力所在。在面向对象编程中，你编写表示现实世界中的事物和情景的类，并基于这些类来创建对象。编写类时，你定义一大类对象都有的通用行为。基于类创建对象时，每个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Common Knowledge of Python - III">
+<meta property="og:url" content="http://lelloandluck.github.io/2015/10/25/The-Common-Knowledge-of-Python-III/index.html">
+<meta property="og:site_name" content="&lt;img src&#x3D;&quot;&#x2F;images&#x2F;Icon.jpg&quot; alt&#x3D;&quot;Welcome back&quot;&gt;&lt;font face&#x3D;&#39;STCAIYUN&#39;&gt;&lt;br&#x2F;&gt;To make a difference life&lt;&#x2F;font&gt; &lt;br&#x2F;&gt;&lt;font color&#x3D;&quot;yellow&quot; size&#x3D;4&gt;Welcome to alan&#39;s blog&lt;&#x2F;font&gt;">
+<meta property="og:description" content="上一篇文章中重点介绍了Python的函数及其使用场景，这篇文章将重点放在Python类及文件操作上，也是通过简单的实例加强对类的认知。类是面向对象编程的一个根本，使用面向对象编程可模拟现实情景，其逼真程度达到了令你惊讶的地步。这也是面向对象编程的魅力所在。在面向对象编程中，你编写表示现实世界中的事物和情景的类，并基于这些类来创建对象。编写类时，你定义一大类对象都有的通用行为。基于类创建对象时，每个">
+<meta property="og:locale">
+<meta property="article:published_time" content="2015-10-25T10:53:20.000Z">
+<meta property="article:modified_time" content="2018-10-30T08:03:17.058Z">
+<meta property="article:author" content="Alan.yuan">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":20,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"perspectiveRightIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":9},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lelloandluck.github.io/2015/10/25/The-Common-Knowledge-of-Python-III/"/>
+
+
+
+
+
+  <title>The Common Knowledge of Python - III | <img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font></title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zhn-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title"><img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font></span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"><A sprint for top expert in testing></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lelloandluck.github.io/2015/10/25/The-Common-Knowledge-of-Python-III/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="<img src="/images/Icon.jpg" alt="Welcome back"><font face='STCAIYUN'><br/>To make a difference life</font> <br/><font color="yellow" size=4>Welcome to alan's blog</font>">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">The Common Knowledge of Python - III</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-10-25T18:53:20+08:00">
+                2015-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>上一篇文章中重点介绍了Python的函数及其使用场景，这篇文章将重点放在Python类及文件操作上，也是通过简单的实例加强对类的认知。类是面向对象编程的一个根本，使用面向对象编程可模拟现实情景，其逼真程度达到了令你惊讶的地步。这也是面向对象编程的魅力所在。在面向对象编程中，你编写表示现实世界中的事物和情景的类，并基于这些类来创建对象。编写类时，你定义一大类对象都有的通用行为。基于类创建对象时，每个对象都自动具备这种通用行为，然后可根据需要赋予每个对象独特的个性。</p>
+<span id="more"></span>
+
+<h3 id="类及其相关概念解析"><a href="#类及其相关概念解析" class="headerlink" title="类及其相关概念解析"></a>类及其相关概念解析</h3><p><strong>1.1 类及其相关属性说明</strong><br>还是先来看一个例子吧</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Person():</span><br><span class="line">    &quot;&quot;&quot;一次人的简单尝试&quot;&quot;&quot;</span><br><span class="line">    def __init__(self, name, sex, age, job):</span><br><span class="line">        &quot;&quot;&quot;初始化属性- 姓名，性别，年龄，职业&quot;&quot;&quot;</span><br><span class="line">        self.name = name</span><br><span class="line">        self.sex = sex</span><br><span class="line">        self.age = age</span><br><span class="line">        self.job = job</span><br><span class="line"></span><br><span class="line">    def commonInfo(self):</span><br><span class="line">        judgeFlag =  &quot;Do you wanna know a personal basic info. Yes or No?&quot;</span><br><span class="line">        if judgeFlag == &quot;yes&quot;:</span><br><span class="line">            print &quot;the basic information is -\n&quot;, &quot;Name - &quot;, self.name, &quot;\nSex - &quot;, self.sex, &quot;\n&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意Python类定义的结构，<font color='yellow' bgcolor='green'>类名用大写字母开头（通常变量，函数用小写打头），后面接形参、括号并冒号后缩行。也有一种说法是变量，函数小写打头，如果是多单词构成的名称则后面每个单词首字母大写或者全部小写，单词间加下划线”_“分隔（即：驼峰命名法）</p>
+</blockquote>
+<blockquote>
+<p>初始化函数initial（），用来对类型的<font color="red">实例绑定属性</font>，有了这个初始化函数定义，在编写类方法和调用类的时候，更加方便便捷。如下代码，如果没有经过init（）函数定义的类，是没有属性的。</p>
+</blockquote>
+<blockquote>
+<p>在类的内部，使用 def 关键字可以为类定义一个方法，与一般函数定义不同，类方法必须包含参数 self,且为第一个参数</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#没有__init__()方法的类</span><br><span class="line">class Rectangle():</span><br><span class="line">    def getPeri(self,a,b):</span><br><span class="line">        return (a + b)*2</span><br><span class="line">    def getArea(self,a,b):</span><br><span class="line">        return a*b</span><br><span class="line"></span><br><span class="line">rect = Rectangle()</span><br><span class="line">print(rect.getPeri(3,4))</span><br><span class="line">print(rect.getArea(3,4))</span><br><span class="line">print(rect.__doc__) # 打印类的说明</span><br><span class="line">print(rect.__dict__) # 打印类的属性</span><br><span class="line"></span><br><span class="line">#有__init__()方法的类</span><br><span class="line">class Rectangle():</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.side1 = a</span><br><span class="line">        self.side2 = b</span><br><span class="line"></span><br><span class="line">    def getPeri(self,a,b):</span><br><span class="line">        return (a + b)*2</span><br><span class="line">    def getArea(self,a,b):</span><br><span class="line">        return a*b</span><br><span class="line"></span><br><span class="line">rect = Rectangle()</span><br><span class="line">print(rect.getPeri(4,4))</span><br><span class="line">print(rect.getArea(4,4))</span><br><span class="line">print(rect.__dict__) # 打印类的属性</span><br></pre></td></tr></table></figure>
+
+<p><strong>1.2 类的继承及覆盖/重写</strong> -</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">#define parent class</span><br><span class="line">class Car(): # class Car: 也是okay的</span><br><span class="line">    &#x27;&#x27;&#x27;模拟一个汽车实体的简单尝试&#x27;&#x27;&#x27;</span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        self.make = make</span><br><span class="line">        self.model = model</span><br><span class="line">        self.year = year</span><br><span class="line">        self.odometer_reading = 0</span><br><span class="line"></span><br><span class="line">    def get_description(self):</span><br><span class="line">        longName = str(self.year) + &#x27; &#x27; + self.make + &#x27; &#x27; + self.model</span><br><span class="line">        print &quot;long name is &quot;, longName</span><br><span class="line">        return longName.title()</span><br><span class="line"></span><br><span class="line">    def read_odometer(self):</span><br><span class="line">        print &quot;This car has &quot; + str(self.odometer_reading) + &quot; miles on it.&quot;</span><br><span class="line"></span><br><span class="line">    def update_odometer(self, mileage):</span><br><span class="line">        if mileage &gt;= self.odometer_reading:</span><br><span class="line">            self.odometer_reading = mileage</span><br><span class="line">        else:</span><br><span class="line">            print &quot;You are prohibited to roll back an odometer!&quot;</span><br><span class="line"></span><br><span class="line">    def increment_odometer(self, miles):</span><br><span class="line">        self.odometer_reading += miles</span><br><span class="line"></span><br><span class="line">#myCar = Car(&#x27;Honda&#x27;, &#x27;CRV&#x27;, &#x27;2016-6&#x27;)</span><br><span class="line">#print &quot;\n\n\nThis is my first Car - &quot;, myCar.get_description()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#define child class</span><br><span class="line">class ElectricCar(Car):</span><br><span class="line">    &quot;&quot;&quot;这里是电动汽车的类型描述&quot;&quot;&quot;</span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        &quot;&quot;&quot;初始化父类属性&quot;&quot;&quot;</span><br><span class="line">        Car.__init__(self, make, model, year)</span><br><span class="line"></span><br><span class="line">    def read_odometer(self):</span><br><span class="line">        print &quot;this is the electronic car, and its odometer will generate automatically! won&#x27;t be changed by manual&quot;</span><br><span class="line"></span><br><span class="line">myFirstCar = ElectricCar(&#x27;Honda&#x27;, &#x27;CRV&#x27;, &#x27;2016&#x27;)</span><br><span class="line">print &quot;My first car describle - &quot;, myFirstCar.get_description()</span><br><span class="line">print &quot;My first car odometer description &gt;&gt;&gt; &quot;, myFirstCar.read_odometer()</span><br><span class="line"></span><br><span class="line">#define a new parent class</span><br><span class="line">class Car(object):</span><br><span class="line">    &#x27;&#x27;&#x27;模拟一个汽车实体的简单尝试&#x27;&#x27;&#x27;</span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        self.make = make</span><br><span class="line">        self.model = model</span><br><span class="line">        self.year = year</span><br><span class="line">        self.odometer_reading = 0</span><br><span class="line"></span><br><span class="line">    def get_description(self):</span><br><span class="line">        longName = str(self.year) + &#x27; &#x27; + self.make + &#x27; &#x27; + self.model</span><br><span class="line">        print &quot;long name is &quot;, longName</span><br><span class="line">        return longName.title()</span><br><span class="line"></span><br><span class="line">    def read_odometer(self):</span><br><span class="line">        print &quot;This car has &quot; + str(self.odometer_reading) + &quot; miles on it.&quot;</span><br><span class="line">        #odometerDesc =  &quot;This car has &quot; + str(self.odometer_reading) + &quot; miles on it.&quot;</span><br><span class="line">        #return odometerDesc</span><br><span class="line"></span><br><span class="line">    def update_odometer(self, mileage):</span><br><span class="line">        if mileage &gt;= self.odometer_reading:</span><br><span class="line">            self.odometer_reading = mileage</span><br><span class="line">        else:</span><br><span class="line">            print &quot;You are prohibited to roll back an odometer!&quot;</span><br><span class="line"></span><br><span class="line">    def increment_odometer(self, miles):</span><br><span class="line">        self.odometer_reading += miles</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ElectronicCar(Car):</span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super(ElectronicCar, self).__init__(make, model, year)</span><br><span class="line"></span><br><span class="line">mySecCar = ElectronicCar(&#x27;Tesla&#x27;, &#x27;Model S&#x27;, &#x27;2018-8&#x27;)</span><br><span class="line"></span><br><span class="line">print &quot;Return my second car information -&quot;, mySecCar.get_description()</span><br><span class="line">print &quot;My second car odometer description &gt;&gt;&gt; &quot;, mySecCar.read_odometer()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>子类如果重写了__init__ 时，要继承父类的构造方法，可以使用 super 关键字：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">super(子类，self).__init__(参数1，参数2，....)</span><br></pre></td></tr></table></figure>
+<p>还有一种经典写法如下 -</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父类名称.__init__(self,参数1，参数2，...)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>虽然没有init（）的类可以使用，但代码写起来会很低效，这不是一个好的代码习惯，遵守约定是一个优秀程序员的需要具备的姿态。</p>
+</blockquote>
+<blockquote>
+<p>字类不能继承父类praviate的属性和方法，在python中指的是加下划线或双下划线的属性及方法。</p>
+</blockquote>
+<p><strong>1.3 类的导入</strong><br>随着你不断地给类添加功能，文件可能变得很长，即便你妥善地使用了继承亦如此。为遵循Python的总体理念，应让文件尽可能整洁。为在这方面提供帮助， Python允许你将类存储在模块中，然后在主程序中导入所需的模块。<br>导入模块中的类和导入模块中的函数写法类似，参看如下表述 -</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">导入单个类</span><br><span class="line">from car import Car</span><br><span class="line">导入多个类</span><br><span class="line">from car import Car, ElectricCar</span><br><span class="line">导入全部模块中的类</span><br><span class="line">from car import *</span><br><span class="line">或者</span><br><span class="line">import car</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><b>小结</b>-<font color='green'>导入模块时，要么from，要么import；而函数或类只能import。<br>有了类可以更好的封装现实世界，并且高效和易于理解，这点是函数无法比拟的，尽管函数也常常用于封装。</p>
+</blockquote>
+<blockquote>
+<p><font color='orange'>实例化一个类就是类名+（）. ex. student = StudentClass()</p>
+</blockquote>
+<blockquote>
+<p><font color='blue'>和普通数相比，在类中定义函数只有一点不同，*<b>就是第一参数永远是类的本身<font color='red'/>实例变量self，在定义时不可以省略</b><em>, 并且调用时，不用传递该参数。除此之外，类的方法(函数）和普通函数没啥区别，你既可以用默认参数、可变参数或者关键字参数（</em>args是可变参数，args接收的是一个tuple，**kw是关键字参数，kw接收的是一个dict）</p>
+</blockquote>
+<blockquote>
+<p>类是抽象的模板，而实例是根据类创建出来的一个个具体的对象，每个对象都拥有相同的方法，但各自的数据可能不同，这是学习OOP编程必须要建立的基本概念，由于类可以起到模板的作用，因此，可以在创建实例的时候，把一些我们认为必须绑定的属性强制填写进去。通过定义一个特殊的__init__方法。</p>
+</blockquote>
+<blockquote>
+<p><font color='pink'>如果要让内部属性不被外部访问，可以把属性的名称前加上两个下划线__，在Python中，实例的变量名如果以__开头，就变成了一个私有变量（private），只有内部可以访问，外部不能访问</p>
+</blockquote>
+<blockquote>
+<p>在Python中，变量为为双划线开头的，如__xxx,是私有变量private，只能类的内部调用，外部对象是不能调用的；<br>变量名类似__xxx__的，也就是以双下划线开头，并且以双下划线结尾的，是特殊变量，特殊变量是可以直接访问的，不是private变量， 编程时变量名不要使用这样的命名；<br>单下划线开头的变量名类似这样_xxx的，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，当你看到这样的变量时，意思就是，“虽然我可以被访问，但是，请把我视为私有变量，不要随意访问”</p>
+</blockquote>
+<blockquote>
+<p><font color='purple'>继承可以把父类的所有功能都直接拿过来，这样就不必重零做起，子类只需要新增自己特有的方法，也可以把父类不适合的方法覆盖重写；<br>有了继承，才能有多态。在调用类实例方法的时候，尽量把变量视作父类类型，这样，所有子类类型都可以正常被接收；</p>
+</blockquote>
+<p><strong>1.4 类的多态、属性限制、装饰</strong><br>所谓多态 - 就是同一类事务有多种不同的形态，一个抽象类有多个子类，因而多态是依赖于继承的，也就是说每个子类可以对同一个消息有不同的响应方式。请看下面的例子 -</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">继承和多态</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">class Animal():</span><br><span class="line">    def run(self):</span><br><span class="line">        print &quot;Animal can run .... &quot;</span><br><span class="line"></span><br><span class="line">class Dog(Animal):</span><br><span class="line">    def run(self):</span><br><span class="line">        print &quot;Dog also run and run fast.&quot;</span><br><span class="line"></span><br><span class="line">class Chick(Animal):</span><br><span class="line">    def run(self):</span><br><span class="line">        print &quot;Chick not only run and also fly.&quot;</span><br><span class="line"></span><br><span class="line">animal = Animal()</span><br><span class="line">animal.run()</span><br><span class="line"></span><br><span class="line">animal1 = Dog()</span><br><span class="line">animal1.run()</span><br><span class="line"></span><br><span class="line">animal2 = Chick()</span><br><span class="line">animal2.run()</span><br><span class="line"></span><br><span class="line">class Pig(Animal):</span><br><span class="line">    pass</span><br><span class="line">animal3 = Pig()</span><br><span class="line">animal3.run()</span><br><span class="line"></span><br><span class="line"># define a new method, and make an instant of Animal as the parameter, so that we can see if the outputs are changed by the parameter.</span><br><span class="line">def runTwice(animal):</span><br><span class="line">    animal.run()</span><br><span class="line">    animal.run()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">runTwice(Animal())</span><br><span class="line">runTwice(Dog())</span><br><span class="line">runTwice(Chick())</span><br><span class="line"></span><br><span class="line"># another subclass of animal</span><br><span class="line">class Horse(Animal):</span><br><span class="line">    def run(self):</span><br><span class="line">        print &quot;Horse runs very fast, and it used to be widely used as a transportation&quot;</span><br><span class="line"></span><br><span class="line">runTwice(Horse())</span><br></pre></td></tr></table></figure>
+<p><strong>使用_<em>slots</em>_</strong> 来限制class的属性，例如只允许对某一个类添加name，sex属性，可以这样来做</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Enrollment(object):</span><br><span class="line">  __slots__ = (&#x27;name&#x27;, &#x27;sex&#x27;) # 用tuple定义允许绑定的属性名称</span><br><span class="line">这样一来如果想给该类的对象绑定新的属性时就会报错，如 -</span><br><span class="line">s = Enrollment()</span><br><span class="line">s.name = &#x27;alan&#x27;</span><br><span class="line">s.sex = &#x27;Male&#x27;</span><br><span class="line">s.age = 33 # 此处age属性不允许被绑定，程序执行会报错</span><br></pre></td></tr></table></figure>
+
+<p><strong>类的装饰decrate</strong> 请参阅之前一篇文章介绍 。。。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/QRcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
+    <div>subscribe my blog by scanning this QR code</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixinincome.GIF" alt=" WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/Alipayincome.GIF" alt=" Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/24/The-Common-Knowledge-of-Python-II/" rel="next" title="The Common Knowledge of Python - II">
+                <i class="fa fa-chevron-left"></i> The Common Knowledge of Python - II
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/26/%E5%9F%BA%E4%BA%8EOutlook%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC%E8%AE%BE%E8%AE%A1/" rel="prev" title="基于Outlook的自动化脚本设计">
+                基于Outlook的自动化脚本设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  <div>
+      
+          <div> 
+	 
+		<div style="text-align:center;color: #ccc;font-size:14px;padding-top:2px"> 			
+			-------------本文结束 <i class="fa fa-paw"> </i> 感谢您的阅读------------- 
+		</div> 
+	 
+</div>
+
+      
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar1.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+                <a href="/archives">
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:alan_yuan009@live.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.wechat.com/zh_HK" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-wechat"></i>Wechat</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/Alan_CV_EN_LatestUpdate.pdf" target="_blank" title="AboutMe_EN">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>AboutMe_EN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/Alan_CV_CN_LatestUpdate.pdf" target="_blank" title="AboutMe_CN">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>AboutMe_CN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%8F%8A%E5%85%B6%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">类及其相关概念解析</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alan.yuan</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">Total times for accessing articles -<span id="busuanzi_value_site_pv"></span>- times </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv"> Total -<span id="busuanzi_value_site_uv"></span>- visitors so far! </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
