@@ -241,7 +241,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #310b07 0%, #3f1b07 100%);
 }
 
 .text-color {
@@ -556,6 +556,8 @@ header .go-back i {
 }
 
 .bg-cover:before,
+
+/*此处去掉bannaer的背景色*/
 .bg-cover:after {
     position: absolute;
     z-index: 1;
@@ -566,6 +568,7 @@ header .go-back i {
     top: 0;
     content: "";
 }
+
 
 .bg-cover .container {
     position: relative;
