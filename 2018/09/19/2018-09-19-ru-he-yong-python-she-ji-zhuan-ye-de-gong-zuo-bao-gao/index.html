@@ -1,0 +1,1710 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="如何用Python设计专业的工作报告, Alan.Yuan">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>如何用Python设计专业的工作报告 | Alan.Yuan</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Alan.Yuan</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/Alan_CV_EN_LatestUpdate.pdf">
+          
+          <i class="fas fa-file-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>CV English</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/Alan_CV_CN_LatestUpdate.pdf">
+          
+          <i class="fas fa-file-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>CV Chinese</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Alan.Yuan</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/medias/Alan_CV_EN_LatestUpdate.pdf " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-file-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>CV English</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/medias/Alan_CV_CN_LatestUpdate.pdf " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-file-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>CV Chinese</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">如何用Python设计专业的工作报告</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python%E5%BC%80%E5%8F%91/">
+                                <span class="chip bg-color">Python开发</span>
+                            </a>
+                        
+                            <a href="/tags/python%E6%B5%8B%E8%AF%95/">
+                                <span class="chip bg-color">python测试</span>
+                            </a>
+                        
+                            <a href="/tags/python-echart/">
+                                <span class="chip bg-color">python echart</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python%E8%87%AA%E5%8A%A8%E5%8C%96/" class="post-category">
+                                python自动化
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2018-09-19
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>先来看下实例，这是我制作的月/季报模式，喜欢的话举个爪吧 ~~<br><font size="14"><a href="/images/Retro.report/retrospective_Report.html">瞧瞧去！</a></font></p><font size="14">
+<p><font face="微软雅黑" color="red" size="3">设计思路：</font></p><font face="微软雅黑" color="red" size="3">
+<ul>
+<li><font face="Gill Sans MT" color="#B20000"> 收集整理数据 -&gt; 将数据转换为Python Echart图表 -&gt; 设计Html报告页，将echart图标统一展示</font></li><font face="Gill Sans MT" color="#B20000">
+<li><img src="/images/pythonEchart.png" alt="设计思路"></li>
+</font></ul><font face="Gill Sans MT" color="#B20000">
+<span id="more"></span>
+
+<p>这里重点还是Python Echart图表的使用上，废话不说，直接上步骤吧 -</p>
+<ol>
+<li>安装python （这个不用我多说了吧 ~~）</li>
+<li>安装python pip (这个一般在安装python时会一并安装的，pip类似于node.js的npm，是python的一个包安装器，有了它会省去我们安装python的不少麻烦，至少不用单独下载安装包)</li>
+<li>安装echart （pip install pyechart）</li>
+<li>调用echart图标（下面详细说说这个的用法）</li>
+</ol>
+<p>Python Echart 使用详解</p>
+<pre class="line-numbers language-none"><code class="language-none">from pyecharts import Bar, Line, Grid, Overlap, EffectScatter, Pie
+
+''' 1. *** 测试项目TCs 统计
+&gt;&gt;  下图实例找齐了Pie, Bar, Line 图常用的修改参数，请参考
+&gt;&gt;  下面各图表的参数设置，实际使用中并不是全部必须的，列在这里仅供参考
+***'''
+# from pyecharts import Bar, Line, Pie, Overlap, EffectScatter
+attr1 = ['DEVDCMODULEMGT', 'GDS Service Portal AT', 'GDS运维管理', 'PPM Release1 AT', 'DCFM告警单验证AT', 'ECC集控中心', 'PPM Release2', 'CRS客户服务系统'] # 测试项目
+val1 = [59, 1, 7, 4, 2, 276, 0, 0] # 各项目测试用例设计量pcs
+
+pie = Pie("TC Outputs Statistic", "各项目测试用例统计", width = 1200, height = 500) # title_pos="center"
+pie.add("TCs Output (单位:个)", attr1, val1,
+        legend_pos="2%", #  legend_pos : 图例位置 right, center, left, bottom, or X%
+        legend_top="25%",
+        is_label_show=True,
+        is_legend_show=True,
+        is_more_utils=True,
+        label_text_color=None, # 'red' or 'green', ....
+        legend_orient='vertical', # legend_orient='vertical' or 'horizontal'
+        radius=[30, 65], #环形内外圆的半径
+        is_label_emphasis=True,
+        legend_text_size=12,
+        # width=1200, -- 这里定义width和height对整体图示不起作用，应该在调用图示对象时定义
+        # height=600,
+        # rosetype='radius', # 有'radius'和'area'两种模式, radius：扇区圆心角展现数据的百分比，半径展现数据的大小。 area：所有扇区圆心角相同，仅通过半径展现数据大小。
+        center=[50, 52], # 饼图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标，默认为 [50, 50]
+        legend_selectedmode=True, # 对图例点选操作禁止或打开
+)
+pie.render("1_ResourceforRetro/render1.html")
+
+
+''' 2. *** 测试项目effort 统计 ***'''
+# from pyecharts import Bar, Line, Pie, Overlap
+attr2 = ['DEVDCMODULEMGT', 'GDS Service Portal AT', 'GDS运维管理', 'PPM Release1 AT', 'DCFM告警单验证AT', 'ECC集控中心', 'PPM Release2', 'CRS客户服务系统']
+val2= [72, 16, 8, 24, 32, 220, 0, 0] # unit：hours
+
+bar = Bar("Test Effort Statistic", "各项目测试工时统计", width = 1200, height = 500)
+bar.add("工时 (单位:小时)", attr2, val2, is_more_utils=True,
+        is_label_show=True,
+        legend_pos="right",
+        legend_top="5%",
+        width = 1200,
+        height = 600,
+        bar_category_gap="60%",
+        mark_point=['max', 'min'], # or 'average'
+        mark_line=['max'],
+        is_datazoom_show=True,
+        is_label_emphasis=True,
+)
+bar.render("1_ResourceforRetro/render2.html")
+
+
+''' 3. *** 测试项目Bugs 统计 ***'''
+# from pyecharts import Bar, Line, Pie, Overlap
+attr3 = ['DEVDCMODULEMGT', 'GDS Service Portal AT', 'GDS运维管理', 'PPM Release1 AT', 'DCFM告警单验证AT', 'ECC集控中心', 'PPM Release2', 'CRS客户服务系统']
+val3 = [28, 0, 3, 4, 0, 79, 0, 0] # unit: pcs
+
+line = Line("Test Bug Statistic", "各项目测试bug统计", width = 1200, height = 500)
+line.add("Bug (单位:个)", attr3, val3, is_more_utils=True,
+         # is_label_show=True,
+         # is_step=True,
+         yaxis_name=u"Bug 个数",
+         # xaxis_name="项目",
+         # xaxis_margin=5,
+         # xaxis_name_pos="80%",
+         # is_radiusaxis_show=True,
+         is_area_show= True,
+         label_text_size=10,
+         # label_color="#12F23",
+         legend_pos="right",
+         legend_top="5%",
+         mark_point=['max', 'min', 'average'], # or 'average'
+         mark_point_symbol='arrow', # or 'arrow'
+         # mark_point_symbolsize=10,
+         mark_point_textcolor='yellow',
+         mark_line=['max'],
+         mark_line_symbolsize=10,
+         line_width=5,
+         # line_type=5,
+         line_color='green',
+         area_opacity=0.8,
+         line_opacity=0.4,
+         symbol_size=3,
+         # is_datazoom_show=True,
+)
+
+es = EffectScatter("", width = 1200, height = 500)
+es.add("Bug statistic", attr3, val3,
+       symbol_size= 20,
+       effect_scale= 3.6,
+       effect_period= 3,
+       symbol= "pin",
+       is_label_show= True,
+       label_color="red"
+)
+
+bar1 = Bar("", width = 1000, height = 400)
+bar1.add("", attr3, val3, is_label_show=True, bar_category_gap="40%")
+
+overlap = Overlap("", width = 1200, height = 500)
+overlap.add(line)
+overlap.add(es)
+# overlap.add(bar)
+overlap.render("1_ResourceforRetro/render3.html")
+
+
+"""
+使用Grid（）对象可以将python chart图并列编排，需要注意的是gird_left, right, height, width 参数的设置，由此引起的各chart图参数设置的调整，建议不要用百分比，这个容易引起显示错位
+下图被注释的代码基本达到了希望的效果
+"""<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>每一个图标的render语句会在当前脚本目录下生成一个该图标的html报告，如 - render(“1_ResourceforRetro/render3.html”)，此路径可自定义，默认是当前脚本路径，报告格式是html，不可改成其他类型。</p>
+<p>获得了需要的图表报告后，接下来就是要将这些报告统一汇总在一张自定义的html文件中，下面是我上面demo图例中的自定义的html文件，不喜勿喷 @@@</p>
+<pre class="line-numbers language-none"><code class="language-none">import os, sys
+from Common_Functions_Consolidation import *
+
+#1. create new path for retrosepective report and retrospective report will locate on the sme path with the scripts
+# **********************************************************************************************************************************************************
+scriptPath = os.getcwd()
+reportFilePath = os.path.join(scriptPath, "retrospective_Report.html")
+
+
+#2. Validate the folder ''htmlReport and see if it is being there already
+# **********************************************************************************************************************************************************
+print os.path.isdir("1_ResourceforRetro") # 文件夹名称是不分大小写的
+if os.path.isdir("1_ResourceforRetro") == False:
+    print "There is no folder of '1_ResourceforRetro' there, please ensure you got this folder first before running this script!"
+    sys.exit()
+
+
+#3. Define retrospective report form by python
+# **********************************************************************************************************************************************************
+
+reload(sys) # 这两句对字符一起可改变解析的字符编码风格
+sys.setdefaultencoding("utf-8") # 这两句对字符一起可改变解析的字符编码风格
+
+#3.1 define html header part of this report -
+#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+reportTitle = "测试线阶段工作汇总 - Apr. ~ Jul."
+pythonWriteHtml_to_File_Part1(reportFilePath, reportTitle)
+
+
+#3.2 define html body part which comes from 'htmlReport' of this report -
+#  --------------------------------------------------------------------------------------------------------------------------------------
+pythonWriteHtml_to_htmlReport(scriptPath, reportFilePath)
+
+
+# #3.3 define html body part which comes from 'htmlReport_1' of this report -
+# #  --------------------------------------------------------------------------------------------------------------------------------------
+# anotherProjectName = "DCFM 告警单重构"
+# addSecondProjectReport_Header(reportFilePath, anotherProjectName)
+# addSecondProjectReport_Body(scriptPath, reportFilePath)
+#
+
+#4 define html ending part of this report -
+#  --------------------------------------------------------------------------------------------------------------------------------------
+python_WriteHtml_to_File_Part2(reportFilePath)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这是上面代码中引用的包（Common_Functions_Consolidation）的相关函数实现-</p>
+<pre class="line-numbers language-none"><code class="language-none">def pythonWriteHtml_to_File_Part1(reportFilePath, reportTitle):
+    # reportFilePath 是一个.html文件，这个文件通常由调用脚本生成
+    fo = open(reportFilePath, "w+")  # 打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。
+    # f.write("&lt;!DOCTYPE html&gt;\n")
+    # f.write("&lt;h1&gt;alan&lt;/h1&gt;")
+    # f.close()
+
+    htmlText = """&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;style type="text/css"&gt;
+    #header {
+        background-color:black;
+        color:white;
+        text-align:left;
+        padding:5px;
+        font-family:Gill Sans MT;
+        font-size:22px
+    }
+
+    #reportZone{
+        width:1550px;
+        &lt;!--这个可以取消，不影响效果 --&gt;
+        align:left;
+        padding:5px;
+        font-family:Gill Sans MT;
+        font-size:12px	 	 
+    }
+
+    .anotherProject{
+        background-color:black;
+        color:white;
+        text-align:left;
+        padding:5px;
+        font-family:Gill Sans MT;
+        font-size:20px
+    }
+
+    #footer {
+        background-color:black;
+        color:white;
+        font-family:Gill Sans MT;
+        font-size:9px
+        text-align:left;
+        padding:2px;
+    }
+
+    # for the animal text -
+    @keyframes blink{
+    0%{opacity: 1;}
+    50%{opacity: 1;}
+    50.01%{opacity: 0;}
+    100%{opacity: 0;}
+    }
+    @-webkit-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+    }
+    @-moz-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+    }
+    @-ms-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+    }
+    @-o-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+    }
+    .blink{
+    animation: blink .85s linear ease-in;
+    -webkit-animation: blink .75s ease-out infinite;
+    -moz-animation: blink .55s ease-out infinite;
+    -ms-animation: blink .65s ease-out infinite;
+    -o-animation: blink .45s ease-out infinite;
+    color: #F00;
+    font-size:18px;
+    }
+
+    &lt;/style&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+    &lt;div id="header"&gt;
+    &lt;h2&gt;&lt;hr/&gt;
+
+    """
+    fo.write(htmlText)
+    fo.close()
+
+    fo = open(reportFilePath, "a")  # 打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。
+    fo.write(reportTitle)
+
+    htmlText = """&lt;hr/&gt;&lt;/h2&gt;
+    &lt;/div&gt;
+
+    &lt;div id="reportZone"&gt;
+      &lt;br&gt;
+    """
+    fo.write(htmlText)
+    fo.close()
+
+
+#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#  Purpose - 定义html的尾部div 代码部分
+#  Notice - 该文件夹和脚本是在同一目录下的
+#  Date - 2018. 06.16
+#  Author - Alan.yuan
+#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def python_WriteHtml_to_File_Part2(reportFilePath):
+    # reportFilePath 是一个.html文件，这个文件通常由调用脚本生成
+    fo = open(reportFilePath, 'a')
+    htmlText = """&lt;/div&gt;
+
+    &lt;div id="footer"&gt;
+    &lt;p&gt;&amp;nbsp Copyright © GDS_TestCenter@163.com. All rights reserved. This consolidation based on our test outputs, and the datum come from Jira and Testlink, it's real and valid. Consolidated here, just want you know more about our Test line, sincerely hope the effort we contributed is indeed to relief you.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;/body&gt;
+    &lt;/html&gt;
+    """
+    fo.write(htmlText)
+    fo.close()
+
+
+#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#  Purpose - 检查文件夹是否存在，如果存在就移除里面所有的文件， 注意是移除里面所有的文件，不是文件夹；如果该文件夹不存在，则创建该文件夹
+#  Notice - 该文件夹和脚本是在同一目录下的
+#  Date - 2018. 06.16
+#  Author - Alan.yuan
+#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def checkFolder_and_RemoveAllFilesIncluded(folderName):
+#该函数检当前脚本目录下是否有制定的folder，如果没有则创建该folder；如果有则进入该folder删除里面所有的文件（注意是文件，不是文件夹）
+    import os, sys
+    if os.path.exists(os.getcwd() + "\\" + folderName) == True: # folderName - 指的是第一个存储测试报告文件夹 “htmlReport”
+        for file_Name in os.listdir(os.getcwd() + "\\" + folderName): # os.listdir(os.getcwd() + "\htmlReport") - 该文件夹下包含的文件list
+            path_File = os.path.join(os.getcwd() + "\\" + folderName, file_Name)
+            if os.path.isfile(path_File):
+                os.remove(path_File)
+    else:
+        os.makedirs(os.getcwd() + "\\" + folderName)
+
+
+#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#  Purpose - 添加视图到body区，主要是&lt;image&gt; ... &lt;/image&gt; 部分代码
+#  Notice - 该文件夹和脚本是在同一目录下的
+#  Date - 2018. 06.16
+#  Author - Alan.yuan
+#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def pythonWriteHtml_to_htmlReport(scriptPath, reportFilePath, listVal, listUnit):
+    htmlTextB = """&lt;iframe src=\""""
+    htmlTextE = """" marginheight="2px" marginwidth="2px" width="1200" height = "500" frameborder="0"&gt;&lt;/iframe&gt;&lt;br/&gt;"""
+    i = 0
+    dirs = os.listdir(scriptPath + "\\1_ResourceforRetro")
+    for dir in dirs:
+        if os.path.isfile(os.path.join(scriptPath + "\\1_ResourceforRetro", dir)):
+            fo = open(reportFilePath, "a")
+            fo.write("&lt;h3&gt; &gt;&gt;&gt;截止目前，统计有 &lt;span class=\"blink\" &gt;%s &lt;/span&gt;%s  - &lt;/h3&gt;"%(listVal[i], listUnit[i])) # listVal, listUnit元素个数必须和html 文件数相等，否则报溢出错误
+            # fo.write("&lt;span style=\"border-color: green; border-width: 1px; border-style: solid; border-radius: 1px;\"&gt;")
+            fo.write(htmlTextB)
+            fo.write(".\\1_ResourceforRetro\\" + dir)
+            fo.write(htmlTextE)
+            fo.close()
+            i += 1
+
+
+#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#  Purpose - 添加第二个项目的html代码，主要是展示项目名称的&lt;div&gt; ... &lt;/idiv&gt; 部分代码
+#  Notice - 该文件夹和脚本是在同一目录下的
+#  Date - 2018. 06.16
+#  Author - Alan.yuan
+#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def addSecondProjectReport_Header(reportFilePath, anotherProjectName):
+    htmlHeard_2B = """&lt;br/&gt;&lt;/div&gt;
+    &lt;!--Adding new project / task --&gt;
+    &lt;!--hr style = "height:0px; border:none; border-top:10px solid #55555;"/ --&gt;
+    &lt;hr style="height:0px;border:none;border-top:10px groove skyblue;" /&gt;
+    &lt;div class = "anotherProject"&gt;&lt;b&gt;"""
+    htmlHeard_2E = """&lt;/b&gt;&lt;/div&gt;&lt;div&gt;"""
+
+    fo = open(reportFilePath, "a")
+    fo.write(htmlHeard_2B)
+    fo.write(anotherProjectName)
+    fo.write(htmlHeard_2E)
+    fo.close()
+
+
+
+#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#  Purpose - 添加第二个项目的html代码，主要是图示的&lt;image&gt; ... &lt;/image&gt; 部分代码
+#  Notice - 该文件夹和脚本是在同一目录下的
+#  Date - 2018. 06.16
+#  Author - Alan.yuan
+#  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def addSecondProjectReport_Body(scriptPath, reportFilePath):
+    html2B = """&lt;iframe src=\" """
+    html2E = """"marginheight="20px" marginwidth="50px" width="1450" height = "550" frameborder="0"&gt;&lt;/iframe&gt;&lt;br/&gt;"""
+
+    dirs = os.listdir(scriptPath + "\htmlReport_1")
+    for dir in dirs:
+        if os.path.isfile(os.path.join(scriptPath + "\htmlReport_1", dir)):
+            fo = open(reportFilePath, "a")
+            fo.write(html2B)
+            fo.write(".\htmlReport_1\\" + dir)
+            fo.write(html2E)
+            fo.close()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</font></font></font>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Alan_Yuan</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://lelloandluck.github.io/2018/09/19/2018-09-19-ru-he-yong-python-she-ji-zhuan-ye-de-gong-zuo-bao-gao/">http://lelloandluck.github.io/2018/09/19/2018-09-19-ru-he-yong-python-she-ji-zhuan-ye-de-gong-zuo-bao-gao/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Alan_Yuan</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python%E5%BC%80%E5%8F%91/">
+                                    <span class="chip bg-color">Python开发</span>
+                                </a>
+                            
+                                <a href="/tags/python%E6%B5%8B%E8%AF%95/">
+                                    <span class="chip bg-color">python测试</span>
+                                </a>
+                            
+                                <a href="/tags/python-echart/">
+                                    <span class="chip bg-color">python echart</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2018/09/22/2018-09-22-python-ce-shi-bao-gao-yan-jiu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Python 测试报告研究">
+                        
+                        <span class="card-title">Python 测试报告研究</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            HTMLTestRunner 是Python的一个标准库，是unittest单元测试的一个框架扩展，顾名思义可以用它来生成漂亮的单元测试报告，千万别小看测试报告，赏心悦目的报告能给测试增色不少，一起来看看HTMLTestRunner是如何工
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-09-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python%E8%87%AA%E5%8A%A8%E5%8C%96/" class="post-category">
+                                    python自动化
+                                </a>
+                            
+                            <a href="/categories/python%E8%87%AA%E5%8A%A8%E5%8C%96/python-%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/" class="post-category">
+                                    python 测试报告
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/">
+                        <span class="chip bg-color">测试报告</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/04/17/2018-09-17-ce-shi-guan-li-xiu-lian-zhi-da-jian-ce-shi-guan-li-ping-tai-testlink/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="测试管理修炼之搭建测试管理平台Testlink">
+                        
+                        <span class="card-title">测试管理修炼之搭建测试管理平台Testlink</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Preparation -
+Xampp官方资料 -https://bitnami.com/stack/xampp?utm_source=bitnami&amp;utm_medium=installer&amp;utm_campaign=XA
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-04-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86/" class="post-category">
+                                    测试管理
+                                </a>
+                            
+                            <a href="/categories/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86/testlink/" class="post-category">
+                                    testlink
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">测试管理</span>
+                    </a>
+                    
+                    <a href="/tags/testlink/">
+                        <span class="chip bg-color">testlink</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 18 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2015-2021</span>
+            
+            <!--<span id="year">2015</span>-->
+            |&nbsp;Powered by&nbsp;<a href="/about" target="_blank">Alan_Yuan</a>
+
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis"><!-- 
+
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+-->
+
+<!--
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+-->
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
