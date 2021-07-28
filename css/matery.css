@@ -241,7 +241,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #310b07 0%, #3f1b07 100%);
+    background-image: linear-gradient(to right, #520b07 0%, #cf1b07 100%);
 }
 
 .text-color {
@@ -305,7 +305,7 @@ header .brand-logo .waves-effect {
 }
 
 header .button-collapse i {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
 header .side-nav .mobile-head {
