@@ -472,6 +472,11 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
@@ -485,7 +490,7 @@
 <h5 id="5-特征测试方面"><a href="#5-特征测试方面" class="headerlink" title="5 特征测试方面"></a>5 特征测试方面</h5><p>Web特征测试主要包括：<br>链接测试 - 主要是保证链接的可用性和正确性，考虑链接的页面是否存在？是否按指示链接到了相应链接的页面？是否存在空白页面等<br>图形测试 - 确保图形有明确用途，图片或动画不要过于紧凑，以免浪费传输时间；其次，验证文字回绕是否正确<br>打印机测试 - 考虑网页打印是否正常（显示的图片和文本的对齐方式可能与打印出来的东西不一样，是否完整打印）</p>
 <h4 id="App特征测试主要包括："><a href="#App特征测试主要包括：" class="headerlink" title="App特征测试主要包括："></a>App特征测试主要包括：</h4><p><em><strong>1. 安装、更新、卸载</strong></em><br>安装：需考虑安装时的中断、弱网以及安装后删除安装文件等情况<br>更新：分强制更新、非强制更新、增量包更新、断点续传、弱网状态下更新等几种情况<br>卸载：需考虑卸载后App相关文件是否删除干净<br><em><strong>2. 权限测试</strong></em><br>设置某个App是否可以获取该权限，比如是否可访问短信、读取联系人、相册、照相机、位置信息等<br>安全测试<br>安装包是否可反编译代码、安装包是否签名、权限设置<br><em><strong>3. 边界测试</strong></em><br>可用存储空间少、飞行模式、系统时间有误、第三方登录（QQ、微信、微博登录）以及没有SD卡/双SD卡等<br>界面操作<br>关于手机端测试，需注意横竖屏切换、多点触控、手势、事件触发区、前后台的切换（从后台回到App，检查是否停留在上次操作界面、功能和应用状态是否一样）等<br><em><strong>4. 干扰测试</strong></em><br>电话响应（接通、呼叫挂断、呼叫保持）、收发短信、中断（插拔数据线、手机锁屏、闹钟、蓝牙等）、电量不足、关机、重启、死机等<br><em><strong>5. 网络测试</strong></em><br>首先，弱网络测试（模拟2G、3G、4G、WiFi网络状态以及丢包情况，重点要考虑回退和刷新是否会造成二次提交）；其次，网络切换测试（网络断开后重连、3G切换到4G/WiFi等）<br><em><strong>6. 中断测试</strong></em><br>在使用App的过程中，网络中断或者设备故障的场景也是时有发生的，这类测试在交易类的App中尤为重要，模拟中断或故障场景，看交易是否停留在上次操作界面<br><em><strong>7. 多点登陆测试</strong></em><br>同时登录多台设备，看App是否能记录登录节点，并确保只有一台设备工作正常<br><em><strong>8. 其他</strong></em><br>用户验证，密码找回，权限设置等也是App类测试常常要考虑的覆盖面。<br><em><strong>9. 闭环测试</strong></em><br>主要用于业务场景的流程验证，用来检验业务的逻辑性和可靠性。这在报表统计，业务数据展示，确保前后台数据一致性方面尤为重要。</p>
 <h5 id="附图"><a href="#附图" class="headerlink" title="附图 -"></a>附图 -</h5><blockquote>
-<p><img src="/images/automationTools.JPG" alt="常用自动化测试工具"></p>
+<p><img src="/medias/automationTools.JPG" alt="常用自动化测试工具"></p>
 </blockquote>
 <p>————————————————<br>未完待续 。。。</p>
 

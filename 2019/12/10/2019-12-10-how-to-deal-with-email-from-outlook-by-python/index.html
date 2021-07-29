@@ -480,6 +480,11 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
@@ -499,9 +504,7 @@
 <li>代码实现 -</li>
 </ol>
 <span id="more"></span>
-
-<p>‘’’</p>
-<pre><code>import win32com.client as win32
+<pre class="line-numbers language-none"><code class="language-none">import win32com.client as win32
 class outlook():
   '''
   Operation local Outlook application
@@ -579,9 +582,8 @@ if __name__ == '__main__':
     receivers = "alan_yuan009@live.cn"
     body = 'This is a test mail which sended by Python script automatically, doing this, we hope we would use this to send our test bug regularlly, so dont reply it, it is test purpose only. Thanks. Alan!'
     filep = r"C:/RTKlog.log"
-    otlk.sendmail(title=title, receivers=receivers, body=body, attach_path=filep)        
-</code></pre>
-<p>‘’’</p>
+    otlk.sendmail(title=title, receivers=receivers, body=body, attach_path=filep)        <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>1. 另外，在安装pywin32模块时，要选择和python版本一致的安装包，下面几个常用python命令，可以查看Python的版本和详细安装信息-</strong>*</p>
 <p><strong>DOS Mode -</strong></p>
 <blockquote>
@@ -602,14 +604,9 @@ if __name__ == '__main__':
 </ul>
 </blockquote>
 <p><strong>2. pip管理第三方包常用命令</strong></p>
-<pre><code>pip install python_moudule
-pip list
-pip install --upgrade somePackage
-pip uninstall somePackage
-freeze list
-
-python setup.py install (for the packages which unzip with setup.py file)
-</code></pre>
+<blockquote>
+<p>  pip install python_moudule<br>  pip list<br>  pip install –upgrade somePackage<br>  pip uninstall somePackage<br>  freeze list<br>  python setup.py install (for the packages which unzip with setup.py file)</p>
+</blockquote>
 
                 
             </div>

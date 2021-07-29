@@ -488,11 +488,16 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><font size="8">自从</font>敏捷开发被引入后，似乎一夜之间所有的软件活动都在围绕着敏捷展开，的确敏捷开发给软件生产带来了极大的效率提升，敏捷开发只是一种软件生产的方法论，它鼓励各相关方（如开发，测试，QA，客户，市场等等）积极参与，以目标为导向，逐一分解功能目标，最终达成需求的目的。围绕敏捷开发的实现，也产生了不同的作业形态和实践类型，如早前的TDD，BDD，所谓TDD，即以测试驱动开发，在先于编码之前实现单元测试用例代码，根据测试代码确定最终的编码方案，这种类型可以尽早的发现问题，提高代码开发质量；另一种是BDD，即行为驱动开发，就是在编码前先确定有哪些场景和行为需要实现，定义好各个需要实现的模块的颗粒度，然后在利用TDD的模式进入确定最终的编码方案，那么如何定义好BDD的颗粒度？在业界没有统一的标准，个人认为合适就好，当然这个合适前提是要得到各相关方认可的。下图是BDD实践框架流程图，图片来自<a target="_blank" rel="noopener" href="https://blog.csdn.net/chancein007/article/details/53933874">网络</a>仅供参考！</p>
-<h4 id="BDD架构流程图"><a href="#BDD架构流程图" class="headerlink" title="BDD架构流程图 -"></a>BDD架构流程图 -</h4><p><img src="/images/BDD.png" alt="BDD"></p>
+<h4 id="BDD架构流程图"><a href="#BDD架构流程图" class="headerlink" title="BDD架构流程图 -"></a>BDD架构流程图 -</h4><p><img src="/medias/BDD.png" alt="BDD"></p>
 <p>这里我要介绍的是另一种敏捷实践OOBDD，这是一种更加符合敏捷思维的实践模式，尽管很早就有这种概念的提出，但市场是能提供OOBDD的产品少之又少，今天给大家介绍一款国内首家将OOBDD实践落地的产品SpecMap,个人认为这是迄今我看到的最好的OOBDD实践产品，真正做到了面向对象的开发和测试有机结合，又能基于需求原型的对象提取，打通了从需求到测试验收的全环节面向对象的过程分析。因为是初次接触，很多功能正在摸索阶段，为避免以偏概全，这里我就其原理做一个简单介绍，有兴趣的童鞋可以点击文章的最后下载试用，操作简便，上手很容易，相信您一定会有惊喜的发现。</p>
 <span id="more"></span>
 <p>SpecMap OOBDD Workflow -</p>
@@ -505,8 +510,8 @@
 <li>分析行为之间的联系</li>
 <li>创建测试集和生成测试用例（根据上面的对象行为自动生成测试用例）</li>
 </ol>
-<p>**** 简要演示图如下 - ****<br><img src="/images/SpecMap/01.JPG" alt="demo_pic01"><br><img src="/images/SpecMap/02.JPG" alt="demo_pic02"><br><img src="/images/SpecMap/03.JPG" alt="demo_pic03"><br><img src="/images/SpecMap/04.JPG" alt="demo_pic04"><br><img src="/images/SpecMap/05.JPG" alt="demo_pic05"><br><img src="/images/SpecMap/06.JPG" alt="demo_pic06"><br><img src="/images/SpecMap/07.JPG" alt="demo_pic07"><br><img src="/images/SpecMap/08.JPG" alt="demo_pic08"></p>
-<p>*** refer to the spec - ***<br><a href="/images/SpecMap/SpecMap%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.pdf">Specification document</a></p>
+<p>**** 简要演示图如下 - ****<br><img src="/medias/SpecMap/01.JPG" alt="demo_pic01"><br><img src="/medias/SpecMap/02.JPG" alt="demo_pic02"><br><img src="/medias/SpecMap/03.JPG" alt="demo_pic03"><br><img src="/medias/SpecMap/04.JPG" alt="demo_pic04"><br><img src="/medias/SpecMap/05.JPG" alt="demo_pic05"><br><img src="/medias/SpecMap/06.JPG" alt="demo_pic06"><br><img src="/medias/SpecMap/07.JPG" alt="demo_pic07"><br><img src="/medias/SpecMap/08.JPG" alt="demo_pic08"></p>
+<p>*** refer to the spec - ***<br><a href="/medias/SpecMap/SpecMap%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.pdf">Specification document</a></p>
 <p><font red="red" size="4"><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1y6AUhGcGIWzXUuq2KW_u4A">下载SpecMap</a> 提取码: eeyr</font></p><font red="red" size="4">
 </font>
                 
