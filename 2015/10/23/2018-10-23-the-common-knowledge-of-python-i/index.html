@@ -476,10 +476,10 @@
 <span id="more"></span>
 <p><strong>1. 变量</strong></p>
 <ul>
-<li>和大多数语言一样，变量可由数字，字母和下划线组成，<font color="red">不能由数字打头。</font></li><font color="red">
+<li>和大多数语言一样，变量可由数字，字母和下划线组成，<font color="red">不能由数字打头。</font></li>
 <li>不要使用Python的保留字作为变量名，以防止解释器编译错误，保留字就是Python内部有特殊意义和用途的字符串定义，如函数名print，变量名类型名int，str, if, while 等等。</li>
 <li>变量名虽然没有强制规定大小写问题，但使用小写字母定义是个不错的主意，大多数语言都如此。</li>
-</font></ul><font color="red">
+</ul>
 <p><strong>2. 数据类型</strong><br>Python数据类型有-</p>
 <ul>
 <li><p>字符串String（在Python中，用引号括起的都是字符串，其中的引号可以是单引号，也可以是双引号）</p>
@@ -554,9 +554,9 @@ print("values",dictDemo.values())
 #移除 key 返回value
 print("移除tom ",dictDemo.pop("tom"))
 print(dictDemo)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p><em>python常用数据转换</em><br>‘’’<br>int(x)<br>str(x)<br>tuple(s) 将序列转换成元组<br>list(s) 将序列转换成列表<br>‘’’</p>
+<li><p><em><strong>python常用数据转换</strong></em><br>‘’’<br>int(x)<br>str(x)<br>tuple(s) 将序列转换成元组<br>list(s) 将序列转换成列表<br>‘’’</p>
 </li>
-<li><p><em>python的注释</em><br>print(“单行注释 #”)<br>print(“多行注释 单引号(3个’)”)<br>print(“多行注释 双引号(3个双引号)”)</p>
+<li><p><strong>python的注释</strong><br>print(“单行注释 #”)<br>print(“多行注释 单引号(3个’)”)<br>print(“多行注释 双引号(3个双引号)”)</p>
 </li>
 </ul>
 <p><strong>3. 判断及循环语句</strong></p>
@@ -591,9 +591,7 @@ for key, value in dict.items():
 or
 for key, value in dict：
   pass<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>‘in’后面是pytho集合数据类型，常见的有list， tuple， dict，string，而数据列表常会用range（）函数来实现。</li>
-</ul>
-<p> while循环-<br>  </p><pre class="line-numbers language-none"><code class="language-none">prompt = "\nTell me something, and I will repeat it back to you:"
+<li>‘in’后面是pytho集合数据类型，常见的有list， tuple， dict，string，而数据列表常会用range（）函数来实现。<br>while循环-<pre class="line-numbers language-none"><code class="language-none">prompt = "\nTell me something, and I will repeat it back to you:"
 prompt += "\nEnter 'quit' to end the program. "
 active = True
 while active:
@@ -601,7 +599,8 @@ while active:
   if message == 'quit':
     active = False
   else:
-    print(message)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p></p>
+    print(message)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
 <ul>
 <li>在任何Python循环中都可使用break语句。例如，可使用break语句来退出遍历列表或字典的for循环。</li>
 </ul>
@@ -648,7 +647,7 @@ for name, info in users.items():
     print "And his/her information are -", information<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
   到此为止，我们已经梳理了Python的常用数据，以及循环和控制语句的基本知识点，牢记这些，在工作中加以练习，举一反三，就能做到熟能生巧了，下面的一篇blog将接着梳理Python的其他一些知识点。</li>
 </ul>
-</font>
+
                 
             </div>
             <hr/>
@@ -898,7 +897,7 @@ for name, info in users.items():
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            今天接着梳理Python之函数、类以及相关的知识点，通过简单的代码实例帮助消化这些具体的或抽象的概念对掌握一门编程语言尤为有用，一起来看看我是怎么整理的。1. 函数 def sayHelloToAnyone(): #&lt;font col
                         
                     </div>
                     <div class="publish-info">
