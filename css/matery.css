@@ -1006,6 +1006,13 @@ article .article-tags .chip {
     color: #999 !important;
 }
 
+/*alan added below one*/
+.reprint__type{
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+}
+
 /*文章详情样式*/
 #artDetail {
     margin-top: -60px;
