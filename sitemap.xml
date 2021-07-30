@@ -473,13 +473,6 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/tags/QTP-UFT/</loc>
-    <lastmod>2021-07-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://lelloandluck.github.io/tags/TDD/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
@@ -502,6 +495,13 @@
   
   <url>
     <loc>http://lelloandluck.github.io/tags/DDT/</loc>
+    <lastmod>2021-07-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://lelloandluck.github.io/tags/QTP-UFT/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -727,7 +727,7 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/mySQL/</loc>
+    <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/Ajax/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -748,7 +748,7 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/Ajax/</loc>
+    <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/mySQL/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -762,14 +762,14 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/QTP-UFT/</loc>
+    <loc>http://lelloandluck.github.io/categories/TDD/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/TDD/</loc>
+    <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/QTP-UFT/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -853,6 +853,13 @@
   </url>
   
   <url>
+    <loc>http://lelloandluck.github.io/categories/TDD/BDD/</loc>
+    <lastmod>2021-07-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/QTP-UFT/Outlook/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
@@ -861,13 +868,6 @@
   
   <url>
     <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/QTP-UFT/LR/</loc>
-    <lastmod>2021-07-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://lelloandluck.github.io/categories/TDD/BDD/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
