@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://lelloandluck.github.io/2018/09/22/2018-09-22-python-ce-shi-bao-gao-yan-jiu/</loc>
+    <lastmod>2021-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://lelloandluck.github.io/2018/09/22/2018-09-22-python-jing-tai-ye-mian-pa-chong/</loc>
+    <lastmod>2021-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://lelloandluck.github.io/2017/09/22/2018-09-22-python-zai-excel-zhong-de-ying-yong/</loc>
+    <lastmod>2021-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://lelloandluck.github.io/2018/10/11/2018-10-11-common-kp-and-concepts-analysis-of-python/</loc>
+    <lastmod>2021-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://lelloandluck.github.io/2020/02/14/2020-02-14-lun-dao-lun-you-xiu-guan-li-zhe-de-yao-su/</loc>
+    <lastmod>2021-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://lelloandluck.github.io/2018/09/23/2018-09-23-python-zai-shu-ju-ku-zhong-de-ying-yong/</loc>
+    <lastmod>2021-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://lelloandluck.github.io/2018/09/23/2018-09-23-python-zai-ajax-zhong-de-ying-yong/</loc>
+    <lastmod>2021-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://lelloandluck.github.io/2019/12/10/2019-12-10-how-to-deal-with-email-from-outlook-by-python/</loc>
+    <lastmod>2021-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://lelloandluck.github.io/2018/10/15/2018-10-15-python-webdriver-api-introduction/</loc>
+    <lastmod>2021-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://lelloandluck.github.io/2020/10/15/2020-10-15-zai-yi-pa-chong/</loc>
+    <lastmod>2021-07-29</lastmod>
+  </url>
+  <url>
     <loc>http://lelloandluck.github.io/2021/07/28/hello-world/</loc>
     <lastmod>2021-07-29</lastmod>
   </url>
@@ -41,15 +81,11 @@
     <lastmod>2021-07-29</lastmod>
   </url>
   <url>
-    <loc>http://lelloandluck.github.io/2019/12/10/2019-12-10-how-to-deal-with-email-from-outlook-by-python/</loc>
+    <loc>http://lelloandluck.github.io/2019/10/10/2019-10-10-app-ce-shi-zhi-wo-jian/</loc>
     <lastmod>2021-07-29</lastmod>
   </url>
   <url>
     <loc>http://lelloandluck.github.io/2018/12/13/2018-12-13-the-first-lesson-of-new-year-ppt/</loc>
-    <lastmod>2021-07-29</lastmod>
-  </url>
-  <url>
-    <loc>http://lelloandluck.github.io/2019/10/10/2019-10-10-app-ce-shi-zhi-wo-jian/</loc>
     <lastmod>2021-07-29</lastmod>
   </url>
   <url>
@@ -59,22 +95,6 @@
   <url>
     <loc>http://lelloandluck.github.io/2015/09/24/2018-09-24-zi-dong-hua-ce-shi-liu-cheng/</loc>
     <lastmod>2021-07-29</lastmod>
-  </url>
-  <url>
-    <loc>http://lelloandluck.github.io/2017/09/22/2018-09-22-python-zai-excel-zhong-de-ying-yong/</loc>
-    <lastmod>2021-07-29</lastmod>
-  </url>
-  <url>
-    <loc>http://lelloandluck.github.io/2018/09/22/2018-09-22-python-jing-tai-ye-mian-pa-chong/</loc>
-    <lastmod>2021-07-29</lastmod>
-  </url>
-  <url>
-    <loc>http://lelloandluck.github.io/2020/02/14/2020-02-14-lun-dao-lun-you-xiu-guan-li-zhe-de-yao-su/</loc>
-    <lastmod>2020-10-16</lastmod>
-  </url>
-  <url>
-    <loc>http://lelloandluck.github.io/2020/10/15/2020-10-15-zai-yi-pa-chong/</loc>
-    <lastmod>2020-10-16</lastmod>
   </url>
   <url>
     <loc>http://lelloandluck.github.io/2020/10/15/2020-10-15-selenium-mo-kuai-de-you-qu-ying-yong-chang-jing/</loc>
@@ -101,27 +121,7 @@
     <lastmod>2018-10-30</lastmod>
   </url>
   <url>
-    <loc>http://lelloandluck.github.io/2018/10/15/2018-10-15-python-webdriver-api-introduction/</loc>
-    <lastmod>2018-10-16</lastmod>
-  </url>
-  <url>
-    <loc>http://lelloandluck.github.io/2018/10/11/2018-10-11-common-kp-and-concepts-analysis-of-python/</loc>
-    <lastmod>2018-10-15</lastmod>
-  </url>
-  <url>
     <loc>http://lelloandluck.github.io/2018/04/17/2018-09-17-ce-shi-guan-li-xiu-lian-zhi-da-jian-ce-shi-guan-li-ping-tai-testlink/</loc>
-    <lastmod>2018-10-15</lastmod>
-  </url>
-  <url>
-    <loc>http://lelloandluck.github.io/2018/09/22/2018-09-22-python-ce-shi-bao-gao-yan-jiu/</loc>
-    <lastmod>2018-10-15</lastmod>
-  </url>
-  <url>
-    <loc>http://lelloandluck.github.io/2018/09/23/2018-09-23-python-zai-ajax-zhong-de-ying-yong/</loc>
-    <lastmod>2018-10-15</lastmod>
-  </url>
-  <url>
-    <loc>http://lelloandluck.github.io/2018/09/23/2018-09-23-python-zai-shu-ju-ku-zhong-de-ying-yong/</loc>
     <lastmod>2018-10-15</lastmod>
   </url>
   <url>

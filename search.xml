@@ -57,8 +57,6 @@
           
           <category> 页面爬虫 </category>
           
-          <category> python网络请求及解析库 </category>
-          
       </categories>
       
       
@@ -129,8 +127,6 @@
           
           <category> 测试管理 </category>
           
-          <category> 测试管理的要素 </category>
-          
       </categories>
       
       
@@ -156,8 +152,6 @@
           
           <category> 自动化测试 </category>
           
-          <category> Python自动化 </category>
-          
           <category> Outlook </category>
           
       </categories>
@@ -166,8 +160,6 @@
         <tags>
             
             <tag> 自动化测试 </tag>
-            
-            <tag> Python自动化 </tag>
             
             <tag> outlook </tag>
             
@@ -344,7 +336,7 @@
       
       <categories>
           
-          <category> python自动化 </category>
+          <category> 自动化测试 </category>
           
           <category> selenium </category>
           
@@ -355,7 +347,7 @@
       
         <tags>
             
-            <tag> python自动化 </tag>
+            <tag> 自动化测试 </tag>
             
             <tag> selenium </tag>
             
@@ -378,8 +370,6 @@
       <categories>
           
           <category> python </category>
-          
-          <category> Python常用知识点解析 </category>
           
       </categories>
       
@@ -404,7 +394,7 @@
       
       <categories>
           
-          <category> python自动化 </category>
+          <category> 自动化测试 </category>
           
           <category> mySQL </category>
           
@@ -431,7 +421,7 @@
       
       <categories>
           
-          <category> python自动化 </category>
+          <category> 自动化测试 </category>
           
           <category> Ajax </category>
           
@@ -462,7 +452,7 @@
           
           <category> python </category>
           
-          <category> 页面爬虫 </category>
+          <category> 爬虫 </category>
           
       </categories>
       
@@ -489,9 +479,7 @@
       
       <categories>
           
-          <category> python自动化 </category>
-          
-          <category> python 测试报告 </category>
+          <category> 自动化测试 </category>
           
       </categories>
       
@@ -574,7 +562,7 @@
       
       <categories>
           
-          <category> python自动化 </category>
+          <category> 自动化测试 </category>
           
           <category> excel </category>
           
@@ -583,7 +571,7 @@
       
         <tags>
             
-            <tag> python自动化 </tag>
+            <tag> python </tag>
             
             <tag> excel </tag>
             
