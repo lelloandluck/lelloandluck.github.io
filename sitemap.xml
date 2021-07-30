@@ -291,14 +291,14 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</loc>
+    <loc>http://lelloandluck.github.io/tags/testlink/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/tags/testlink/</loc>
+    <loc>http://lelloandluck.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -678,14 +678,14 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/python/</loc>
+    <loc>http://lelloandluck.github.io/categories/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86/testlink/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86/testlink/</loc>
+    <loc>http://lelloandluck.github.io/categories/python/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -713,13 +713,6 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/python/%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2021-07-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://lelloandluck.github.io/categories/Markdown/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
@@ -727,7 +720,7 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/Ajax/</loc>
+    <loc>http://lelloandluck.github.io/categories/python/%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -735,6 +728,13 @@
   
   <url>
     <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/selenium/</loc>
+    <lastmod>2021-07-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/Ajax/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -797,14 +797,14 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/Git/Github/</loc>
+    <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/Outlook/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/Outlook/</loc>
+    <loc>http://lelloandluck.github.io/categories/Git/Github/</loc>
     <lastmod>2021-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
