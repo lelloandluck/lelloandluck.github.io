@@ -291,7 +291,7 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/tags/testlink/</loc>
+    <loc>http://lelloandluck.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2021-08-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -326,7 +326,7 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</loc>
+    <loc>http://lelloandluck.github.io/tags/testlink/</loc>
     <lastmod>2021-08-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -445,13 +445,6 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/tags/PIL/</loc>
-    <lastmod>2021-08-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://lelloandluck.github.io/tags/Linux/</loc>
     <lastmod>2021-08-03</lastmod>
     <changefreq>daily</changefreq>
@@ -467,6 +460,13 @@
   
   <url>
     <loc>http://lelloandluck.github.io/tags/Shell/</loc>
+    <lastmod>2021-08-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://lelloandluck.github.io/tags/PIL/</loc>
     <lastmod>2021-08-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -755,7 +755,7 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/python/PIL/</loc>
+    <loc>http://lelloandluck.github.io/categories/Linux/</loc>
     <lastmod>2021-08-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -769,7 +769,7 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/categories/Linux/</loc>
+    <loc>http://lelloandluck.github.io/categories/python/PIL/</loc>
     <lastmod>2021-08-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
