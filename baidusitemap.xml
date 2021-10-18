@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://lelloandluck.github.io/2021/10/18/migrate-your-hexo-website/</loc>
+    <lastmod>2021-10-18</lastmod>
+  </url>
+  <url>
+    <loc>http://lelloandluck.github.io/2021/10/18/key-steps-for-hexo/</loc>
+    <lastmod>2021-10-18</lastmod>
+  </url>
+  <url>
     <loc>http://lelloandluck.github.io/2018/09/22/2018-09-22-python-ce-shi-bao-gao-yan-jiu/</loc>
     <lastmod>2021-07-29</lastmod>
   </url>
@@ -125,11 +133,11 @@
     <lastmod>2018-10-15</lastmod>
   </url>
   <url>
-    <loc>http://lelloandluck.github.io/2015/10/26/2018-09-24-ji-yu-outlook-de-zi-dong-hua-jiao-ben-she-ji/</loc>
+    <loc>http://lelloandluck.github.io/2015/11/04/2018-09-24-xing-neng-ce-shi-zhi-lr-jing-dian-an-li/</loc>
     <lastmod>2018-10-15</lastmod>
   </url>
   <url>
-    <loc>http://lelloandluck.github.io/2015/11/04/2018-09-24-xing-neng-ce-shi-zhi-lr-jing-dian-an-li/</loc>
+    <loc>http://lelloandluck.github.io/2015/10/26/2018-09-24-ji-yu-outlook-de-zi-dong-hua-jiao-ben-she-ji/</loc>
     <lastmod>2018-10-15</lastmod>
   </url>
 </urlset> 

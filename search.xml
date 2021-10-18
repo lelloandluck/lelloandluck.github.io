@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>Migrate your hexo website</title>
+      <link href="/2021/10/18/migrate-your-hexo-website/"/>
+      <url>/2021/10/18/migrate-your-hexo-website/</url>
+      
+        <content type="html"><![CDATA[<p>Have you met the trouble of migrating your hexo website from one machine to another or one folder to another folder? Yeah, actually, this situation happens in our life in times. maybe you have ever troubled for these and have been looking for a simple way to deal with. and now I want to state what i did for this situation.</p><h5 id="1-Check-your-environmwent"><a href="#1-Check-your-environmwent" class="headerlink" title="1. Check your environmwent"></a>1. Check your environmwent</h5><p>set up your hexo environment for new machine (refer to the steps 1 ~ 3 from my previous blog)</p><p>if you only migrate your hexo website from folder to another in the same machine, you only focus on step3 enough.</p><h5 id="2-Replace-the-key-files"><a href="#2-Replace-the-key-files" class="headerlink" title="2. Replace the key files"></a>2. Replace the key files</h5><p>once your set up your hexo website environment in your new folder or machine, just copy these files/folders from your old hexo direction into your new hexo directory and replaced enough<br><img src="/medias/migrateBlog.JPG" alt="replace these files/folders"></p><h5 id="3-Execute-required-three-steps"><a href="#3-Execute-required-three-steps" class="headerlink" title="3. Execute required three steps"></a>3. Execute required three steps</h5><pre class="line-numbers language-none"><code class="language-none">hexo clean or hexo chexo generate or hexo ghexo deploy or hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>if some steps can go through, turn back to check and see if some modules miss, basically, you can find easily the solution based on the hints information.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+          <category> website </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> migrate hexo </tag>
+            
+            <tag> migrate website </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Key steps for hexo</title>
+      <link href="/2021/10/18/key-steps-for-hexo/"/>
+      <url>/2021/10/18/key-steps-for-hexo/</url>
+      
+        <content type="html"><![CDATA[<p>Having an independent website is a populor cool thing at persent and maybe you have been expecting to own your website, blog for for a long time. now I want to recommend you a simple tool to help you archieve these easily. it’s hexo</p><p>Why is it hexo?  because it’s simple and stable and work well with github easily. using it can help you to deploy your website, blog to internet quickly. no cost and no time almost. all of these proofed hexo a very good approach to do such these things</p><p>Okay, let me see how to use hexo to set up your website. here i will focus on the specific steps to use hexo without too much expositions</p><p><strong><font color="red">1. Set up the hexo environment -</font></strong><br>1.1 Download Node.js and Git and install them afterwards</p><ul><li>Node.js：<a href="https://nodejs.org/zh-cn">https://nodejs.org/zh-cn</a></li><li>Git：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a><br>(because hexo based on Node.js so install it first)</li></ul><p>1.2 Check the installation result by these commands -<br>Win + R and then enter the commands like this:</p><ul><li>node -v</li><li>npm -v</li><li>git –version<br>if these commands can return the edition information then we can cosider they are okay for installation</li></ul><p><strong><font color="red">2. Connect github -</font></strong><br>2.1 Sign in a github account with your email account<br>2.2 Creae a new repository in your github website like this, and make sure the customized ‘repository name’ is quite as same as your user name. doing this strictly so that you would be able to use your user name as a unique domain name in internet directly<br><img src="/medias/createNewRepository.jpg" alt="create new repository in your github"></p><p><strong><font color="red">3. Install hexo in your local -</font></strong><br>3.1 Use npm to install hexo in one clicking<br><code>npm install -g hexo-cli</code><br>3.2 Initializate hexo and preview it in your local</p><pre class="line-numbers language-none"><code class="language-none">hexo init # initializationnpm install # install all the required componentshexo clean # clean the buffer fileshexo generate # generate pageshexo server # for local preview<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>so far, you already set up your hexo website in your local. next I will sum up the steps on how to deploy your website to github</p><p><strong><font color="blue">4. Deploy your hexo website to github -</font></strong><br>4.1 firstly, install hexo-deployer-git<br><code>npm install hexo-deployer-git --save</code><br>and then modify the config file _config.yml like this -</p><pre class="line-numbers language-none"><code class="language-none">deploy:  type: git  repository: git@github.com:用户名/用户名.github.io.git  branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>after this, execute the command <code>hexo d</code> to deploy your website into the github<br>and then you can access your hexo website use this url - <code>https://用户名.github.io</code></p><p><strong><font color="green">5. Create your article -</font></strong><br>5.1 Use this commend to create your blog article<br><code>hexo new "my new post" </code><br>after this, you should be able to find your article ‘my new post’ in source folder. and then use Markdown editor to complete your composition<br>5.2 Deploy your article to github<br>only execute these two steps to make it -</p><pre class="line-numbers language-none"><code class="language-none">hexo g   # 生成页面hexo d   # 部署发布<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>5.3 The common commend reference -</p><pre class="line-numbers language-none"><code class="language-none">hexo new "name"       # 新建文章hexo new page "name"  # 新建页面hexo g                # 生成页面hexo d                # 部署hexo g -d             # 生成页面并部署hexo s                # 本地预览hexo clean            # 清除缓存和已生成的静态文件hexo help             # 帮助<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>Okay, that all the key steps on how to build your own hexo website. hopfully this would be useful for your reference</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+          <category> website </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> website </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git如何创建远程分支并提交文件</title>
       <link href="/2021/07/29/git-ru-he-chuang-jian-yuan-cheng-fen-zhi-bing-ti-jiao-wen-jian/"/>
       <url>/2021/07/29/git-ru-he-chuang-jian-yuan-cheng-fen-zhi-bing-ti-jiao-wen-jian/</url>
@@ -938,9 +996,9 @@
       
         <tags>
             
-            <tag> 自动化测试 </tag>
-            
             <tag> LR </tag>
+            
+            <tag> 自动化测试 </tag>
             
             <tag> QTP/UFT </tag>
             
