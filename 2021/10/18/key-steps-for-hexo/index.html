@@ -533,7 +533,8 @@
 <li>git –version<br>if these commands can return the edition information then we can cosider they are okay for installation</li>
 </ul>
 <p><strong><font color="red">2. Connect github -</font></strong><br>2.1 Sign in a github account with your email account<br>2.2 Creae a new repository in your github website like this, and make sure the customized ‘repository name’ is quite as same as your user name. doing this strictly so that you would be able to use your user name as a unique domain name in internet directly<br><img src="/medias/createNewRepository.jpg" alt="create new repository in your github"></p>
-<p><strong><font color="red">3. Install hexo in your local -</font></strong><br>3.1 Use npm to install hexo in one clicking<br><code>npm install -g hexo-cli</code><br>3.2 Initializate hexo and preview it in your local</p>
+<p><strong><font color="red">3. Install hexo in your local -</font></strong><br>3.1 Use npm to install hexo in one clicking<br><code>npm install -g hexo-cli</code></p>
+<p>3.2 Initializate hexo and preview it in your local</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo init # initialization
 npm install # install all the required components
 
@@ -547,9 +548,11 @@ hexo server # for local preview<span aria-hidden="true" class="line-numbers-rows
   repository: git@github.com:用户名/用户名.github.io.git
   branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>after this, execute the command <code>hexo d</code> to deploy your website into the github<br>and then you can access your hexo website use this url - <code>https://用户名.github.io</code></p>
-<p><strong><font color="green">5. Create your article -</font></strong><br>5.1 Use this commend to create your blog article<br><code>hexo new "my new post" </code><br>after this, you should be able to find your article ‘my new post’ in source folder. and then use Markdown editor to complete your composition<br>5.2 Deploy your article to github<br>only execute these two steps to make it -</p>
+<p><strong><font color="green">5. Create your article -</font></strong><br>5.1 Use this commend to create your blog article<br><code>hexo new "my new post" </code><br>after this, you should be able to find your article ‘my new post’ in source folder. and then use Markdown editor to complete your composition</p>
+<p>5.2 Deploy your article to github<br>only execute these two steps to make it -</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo g   # 生成页面
 hexo d   # 部署发布<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>5.3 The common commend reference -</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo new "name"       # 新建文章
 hexo new page "name"  # 新建页面
