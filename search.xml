@@ -8,7 +8,7 @@
       <link href="/2021/10/18/migrate-your-hexo-website/"/>
       <url>/2021/10/18/migrate-your-hexo-website/</url>
       
-        <content type="html"><![CDATA[<p>Have you met the trouble of migrating your hexo website from one machine to another or one folder to another folder? Yeah, actually, this situation happens in our life in times. maybe you have ever troubled for these and have been looking for a simple way to deal with. and now I want to state what i did for this situation.</p><h5 id="1-Check-your-environmwent"><a href="#1-Check-your-environmwent" class="headerlink" title="1. Check your environmwent"></a>1. Check your environmwent</h5><p>set up your hexo environment for new machine (refer to the steps 1 ~ 3 from my previous blog)</p><p>if you only migrate your hexo website from folder to another in the same machine, you only focus on step3 enough.</p><h5 id="2-Replace-the-key-files"><a href="#2-Replace-the-key-files" class="headerlink" title="2. Replace the key files"></a>2. Replace the key files</h5><p>once your set up your hexo website environment in your new folder or machine, just copy these files/folders from your old hexo direction into your new hexo directory and replaced enough<br><img src="/medias/migrateBlog.JPG" alt="replace these files/folders"></p><h5 id="3-Execute-required-three-steps"><a href="#3-Execute-required-three-steps" class="headerlink" title="3. Execute required three steps"></a>3. Execute required three steps</h5><pre class="line-numbers language-none"><code class="language-none">hexo clean or hexo chexo generate or hexo ghexo deploy or hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>if some steps can go through, turn back to check and see if some modules miss, basically, you can find easily the solution based on the hints information.</p>]]></content>
+        <content type="html"><![CDATA[<p>Have you met the trouble of migrating your hexo website from one machine to another or one folder to another folder? Yeah, actually, this situation happens in our life in times. maybe you have ever troubled for these and have been looking for a simple way to deal with. and now I want to state what i did for this situation.</p><h5 id="1-Check-your-environmwent"><a href="#1-Check-your-environmwent" class="headerlink" title="1. Check your environmwent"></a>1. Check your environmwent</h5><p>set up your hexo environment for new machine (refer to the steps 1 ~ 3 from my previous blog)</p><p>if you only migrate your hexo website from folder to another in the same machine, you only focus on step3 enough.</p><h5 id="2-Replace-the-key-files"><a href="#2-Replace-the-key-files" class="headerlink" title="2. Replace the key files"></a>2. Replace the key files</h5><p>once your set up your hexo website environment in your new folder or machine, just copy these files/folders from your old hexo direction into your new hexo directory and replaced enough<br><img src="/medias/migrateBlog.JPG" alt="replace these files/folders"></p><h5 id="3-Execute-required-three-steps"><a href="#3-Execute-required-three-steps" class="headerlink" title="3. Execute required three steps"></a>3. Execute required three steps</h5><pre class="line-numbers language-none"><code class="language-none">hexo clean or hexo chexo generate or hexo ghexo deploy or hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>if some steps cann’t go through, turn back to check and see if some modules miss, basically, you can find easily the solution based on the hints information.</p>]]></content>
       
       
       <categories>
@@ -996,9 +996,9 @@
       
         <tags>
             
-            <tag> LR </tag>
-            
             <tag> 自动化测试 </tag>
+            
+            <tag> LR </tag>
             
             <tag> QTP/UFT </tag>
             
