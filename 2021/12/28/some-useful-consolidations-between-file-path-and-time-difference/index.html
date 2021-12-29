@@ -506,7 +506,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>Continuing my consolidation on common operations for python, picked up some useful modules from my code pools, and i am confident it’s indeed useful when you’d met the same situations. lets see what i picked up here -</p>
-<h5 id="1-Python-获取指定目录下的路径，文件夹以及文件"><a href="#1-Python-获取指定目录下的路径，文件夹以及文件" class="headerlink" title="1. Python 获取指定目录下的路径，文件夹以及文件 -"></a><font color="red"><strong>1. Python 获取指定目录下的路径，文件夹以及文件 -</strong></font></h5><blockquote>
+<h4 id="1-Python-获取指定目录下的路径，文件夹以及文件"><a href="#1-Python-获取指定目录下的路径，文件夹以及文件" class="headerlink" title="1. Python 获取指定目录下的路径，文件夹以及文件-"></a><font color="red"><strong>1. Python 获取指定目录下的路径，文件夹以及文件-</strong></font></h4><blockquote>
 <p>可以使用for (root, dirs, files) in walk(roots)函数<br> 每次遍历的对象都是返回的是一个三元组(root,dirs,files)<br> root 所指的是当前正在遍历的这个文件夹的本身的地址（及文件夹的路径）<br> dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录)<br> files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录)</p>
 </blockquote>
 <p><strong>即是搜寻目标路径下的文件夹和文件，一层一层的遍历进行，包括当前目标路径本身（这里的路径即是绝对路径地址，不是指单个的文件夹）</strong></p>
@@ -527,7 +527,7 @@ for root, dirs, files in os.walk(r'C:\virRoom_Django\myProject\appOne\imageStore
     # 一旦获取了某个路径dir和其中的file，就可以用语句 os.path.join(root, file) 来配合出改文件的完整路径了
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="2-获取路径常用操作"><a href="#2-获取路径常用操作" class="headerlink" title="2. 获取路径常用操作 -"></a><font color="red"><strong>2. 获取路径常用操作 -</strong></font></h5><pre class="line-numbers language-none"><code class="language-none">getPath = os.getcwd() # 获取文件当前工作目录路径（绝对路径）
+<h4 id="2-获取路径常用操作"><a href="#2-获取路径常用操作" class="headerlink" title="2. 获取路径常用操作-"></a><font color="red"><strong>2. 获取路径常用操作-</strong></font></h4><pre class="line-numbers language-none"><code class="language-none">getPath = os.getcwd() # 获取文件当前工作目录路径（绝对路径）
 print(getPath)
 getPath = os.path.abspath(__file__) # 获得文件所在的路径（绝对路径）
 print(getPath)
@@ -544,7 +544,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # 获取�
 print "Base_Dir: ", BASE_DIR
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="3-获取时间，计算时间差"><a href="#3-获取时间，计算时间差" class="headerlink" title="3. 获取时间，计算时间差 -"></a><font color="red"><strong>3. 获取时间，计算时间差 -</strong></font></h5><p>this kind of request often asked on our daily routine, and how to get the time and timeslot, i believe you would have a lot of solutions, however, I want to share you some useful and small methods here, and i sbould be useful for your reference</p>
+<h4 id="3-获取时间，计算时间差"><a href="#3-获取时间，计算时间差" class="headerlink" title="3. 获取时间，计算时间差 -"></a><font color="red"><strong>3. 获取时间，计算时间差 -</strong></font></h4><p>this kind of request often asked on our daily routine, and how to get the time and timeslot, i believe you would have a lot of solutions, however, I want to share you some useful and small methods here, and i sbould be useful for your reference</p>
 <pre class="line-numbers language-none"><code class="language-none"># 3.1 获取时间，计算时间差
 #注意 - datetime.datetime（）表示的时间可以相加减，无须设计函数来计算时间差的小时分秒数，你可以设置datetime（自定义格式）格式，然后时间差也是按这个格式输出的 -
 # 2.1 按默认时间格式获取当前的时间，并进行时间差计算
@@ -857,18 +857,17 @@ python中时间日期格式化符号参数：
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/12/28/some-useful-consolidations-between-file-path-and-time-difference/">
+                <a href="/2021/12/29/a-useful-application-of-python-in-excel/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="Some Useful Consolidations between File Path and Time Difference">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="A useful application of Python in Excel">
                         
-                        <span class="card-title">Some Useful Consolidations between File Path and Time Difference</span>
+                        <span class="card-title">A useful application of Python in Excel</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -878,18 +877,25 @@ python中时间日期格式化符号参数：
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-28
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Alan_Yuan
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            <a href="/categories/Python/Excel/" class="post-category">
+                                    Excel
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -897,8 +903,8 @@ python中时间日期格式化符号参数：
                         <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/Python-Common-operations/">
-                        <span class="chip bg-color">Python Common operations</span>
+                    <a href="/tags/Excel/">
+                        <span class="chip bg-color">Excel</span>
                     </a>
                     
                 </div>
