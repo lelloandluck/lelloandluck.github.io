@@ -340,21 +340,14 @@
 
   
   <url>
-    <loc>http://lelloandluck.github.io/tags/%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B/</loc>
-    <lastmod>2022-02-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://lelloandluck.github.io/tags/%E6%B5%8B%E8%AF%95%E4%BD%93%E7%B3%BB/</loc>
-    <lastmod>2022-02-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://lelloandluck.github.io/tags/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2022-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://lelloandluck.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -368,7 +361,14 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</loc>
+    <loc>http://lelloandluck.github.io/tags/%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2022-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://lelloandluck.github.io/tags/%E6%B5%8B%E8%AF%95%E4%BD%93%E7%B3%BB/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -704,20 +704,6 @@
   </url>
   
   <url>
-    <loc>http://lelloandluck.github.io/tags/hexo/</loc>
-    <lastmod>2022-02-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://lelloandluck.github.io/tags/website/</loc>
-    <lastmod>2022-02-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://lelloandluck.github.io/tags/migrate-hexo/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
@@ -726,6 +712,20 @@
   
   <url>
     <loc>http://lelloandluck.github.io/tags/migrate-website/</loc>
+    <lastmod>2022-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://lelloandluck.github.io/tags/hexo/</loc>
+    <lastmod>2022-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://lelloandluck.github.io/tags/website/</loc>
     <lastmod>2022-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
