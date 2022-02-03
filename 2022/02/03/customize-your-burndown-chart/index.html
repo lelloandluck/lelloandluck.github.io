@@ -1,0 +1,1421 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Customize your burndown chart, QA, SW Test, Automation Test, QTP, UFT, Python, QC, Test Expert, 软件测试, 软件测试专家, 自动化测试专家, 测试经理, 测试管理, 软件自动化测试">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+    <title>Customize your burndown chart | Alan.Yuan</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <!--<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>-->
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Alan.Yuan</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/Alan_CV_EN_LatestUpdate.pdf">
+          
+          <i class="fab fa-battle-net" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>EN-Know me</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/Alan_CV_CN_LatestUpdate.pdf">
+          
+          <i class="fab fa-battle-net" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>CN-Know me</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/medias/QRcode.jpg" class="waves-effect waves-light">
+      
+      <i class="fab fa-weixin" style="zoom: 0.6;"></i>
+      
+      <span>JoinMe</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Alan.Yuan</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background: #00CC00;" >
+              
+                <li>
+
+                  <a href="/medias/Alan_CV_EN_LatestUpdate.pdf " style="margin-left:50px">
+				  
+				   <i class="fa fab fa-battle-net" style="position: absolute;left:28px" ></i>
+			      
+		          <span>EN-Know me</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/medias/Alan_CV_CN_LatestUpdate.pdf " style="margin-left:50px">
+				  
+				   <i class="fa fab fa-battle-net" style="position: absolute;left:28px" ></i>
+			      
+		          <span>CN-Know me</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/medias/QRcode.jpg" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-weixin"></i>
+			
+			JoinMe
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Customize your burndown chart</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python-pyecharts/">
+                                <span class="chip bg-color">python pyecharts</span>
+                            </a>
+                        
+                            <a href="/tags/python-report/">
+                                <span class="chip bg-color">python report</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python-report/" class="post-category">
+                                python report
+                            </a>
+                        
+                            <a href="/categories/python-report/python-pyecharts/" class="post-category">
+                                python pyecharts
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2022-02-03
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-02-03
+                </div>
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>In our daily work, We often need to specify a variety of reports. A beautiful and illustrated report can instantly brighten our work. as you known there are a lot of methods to do this thing, such as Excel, PPT, and sorts of statistic app. but today, I wanna to introduce you another approach to reach it, it’s python pyecharts. use python pyecharts we can customize sorts of report and it offers variety of charts to help us complete sorts of statistical illustrated. Okay, let’s see how I can use Python to automatically generate burndown diagrams -</p>
+<p>Okay，without further ado, as usual, let me show my code on how to implement this scenario -</p>
+<p><strong>Step1 -</strong> <font color="blue">Import the essential packages </font></p>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+# @Project Name: PyRepository
+# @File: dryRun_pyecharts.py
+# @Author: Alan.Yuan
+# @Time: 2022/1/15 16:59
+# Press Shift+F10 to execute it or replace it with your code, in my laptop you should use this combine keys to execute : "shift + fn + F10"
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 导入柱状图-Bar
+from pyecharts.charts import Bar, Line, Grid #导入相关图形的构造方法
+from pyecharts import options as opts #引入配置项入口
+from pyecharts.globals import ThemeType
+
+import win32com, random
+from win32com.client import Dispatch, constants, DispatchEx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>Step2 -</strong> <font color="blue">Prepare your test data </font><br>Usually, the test data points to the initialization pyecharts parameters, You can assign directly or you assign them from a file, here I get the initialization from a specified excel file -</p>
+<pre class="line-numbers language-none"><code class="language-none">reportFile = r'C:\Users\ayuan2\Desktop\Alan_Studio_Mini App\Test Scenario_R1.3.xlsx'
+xlApp = win32com.client.Dispatch("Excel.Application")
+xlOpenBook = xlApp.Workbooks.Open(reportFile)
+
+temp = xlOpenBook.Worksheets('Report Statistic').Range("G4:V4")
+getDateRangeList = []
+for i in range(0, len(temp)):
+    getDateRangeList.append(str(temp[i]))
+print(getDateRangeList)
+
+temp = xlOpenBook.Worksheets('Report Statistic').Range("G5:V5")
+getPlanedRangeList = []
+for i in range(0, len(temp)):
+    getPlanedRangeList.append(str(temp[i]))
+print(getPlanedRangeList)
+
+temp = xlOpenBook.Worksheets('Report Statistic').Range("G6:V6")
+getActualRangeList = []
+for i in range(0, len(temp)):
+    getActualRangeList.append(str(temp[i]))
+print(getActualRangeList)
+
+temp = xlOpenBook.Worksheets('Report Statistic').Range("G7:V7")
+getPlanedCumulativeRangeList = []
+for i in range(0, len(temp)):
+    getPlanedCumulativeRangeList.append(str(temp[i]))
+print(getPlanedCumulativeRangeList)
+
+temp = xlOpenBook.Worksheets('Report Statistic').Range("G8:V8")
+getActualCumulativeRangeList = []
+for i in range(0, len(temp)):
+    getActualCumulativeRangeList.append(str(temp[i]))
+print(getActualCumulativeRangeList)
+
+xlOpenBook.Save() #case senstive, so don't use .save() instead
+xlOpenBook.Close()
+xlApp.Quit()
+
+colorList = [
+    '#ffcc99', '#ff9966',  '#ff6633', '#ff3333', '#cc00ff', '#ccff00', '#9999ff', '#993399', '#990033', '#6600ff', '#3366ff', '#00ff66', '#006633', '#483D8B', '#4B0082',
+    '#ff1493', '#b8860b', '#9acd32', '#32cd32', '#48d1cc', '#00ffff', '#008080', '#696969', '#ba55d3', '#FF00FF', '#FF4500', '#006400', '#0000CD', '#9400D3'
+    '#C71585', '#FFC0CB', '#8A2BE2', '#1E90FF', '#C71585'
+]
+getInt = random.randint(0, 34)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>Step3 -</strong> <font color="blue">Recall a specified pyecharts Bar</font></p>
+<pre class="line-numbers language-none"><code class="language-none"># 定义Bar Chart的基本属性，并将其对应到 yaxis_index=0 -
+bar = Bar(init_opts=opts.InitOpts(width='1560px', height='400px', bg_color='#E0FFFF'))#bg_color='#f5f5f5', #FFF8DC, #F5F5F5, #E0FFFF, #FFFFF0只有在此处加背景才是有效的，下面的Line处加背景无效, theme=ThemeType.MACARONS. bg_color='#4EFEB3'
+
+# 添加X轴, Y轴内容 -
+# bar.add_xaxis(["Day01", "Day02", "Day03", "Day04", "Day05", "Day06", "Day07", "Day08", "Day09", "Day10"])
+bar.add_xaxis(getDateRangeList)
+# bar.add_yaxis("Planned Execution Qty", [5, 7, 9, 11, 13, 15, 17, 19, 16, None], yaxis_index=0, color='   #EE6363')
+getInt = random.randint(0, 20)
+bar.add_yaxis("Planned Execution Qty", getPlanedRangeList, yaxis_index=0, color=colorList[getInt])
+# bar.add_yaxis("Actual Execution Qty", [3, 8, 7, 8, 9, 12, 10, 15, 12, None], yaxis_index=0, color='#00CD66')
+getInt = random.randint(0, 20)
+bar.add_yaxis("Actual Execution Qty      ", getActualRangeList, yaxis_index=0, color=colorList[getInt])
+
+# 定义第二个轴 (包括坐标刻度大小，及跨度大小min_=0, max_=80, )- # name_location = 'end' 是默认值
+bar.extend_axis(yaxis=opts.AxisOpts(name="Daily Cumulative Executions Scale", min_=-0, type_="value", name_location='end', position='right', offset=4, axisline_opts=opts.AxisLineOpts(linestyle_opts=opts.LineStyleOpts(width=4, color='#0000CD')),
+                           axislabel_opts=opts.LabelOpts(font_family="Gill Sans MT", font_weight='bold', formatter="{value} PCS"), name_textstyle_opts=opts.TextStyleOpts(font_family="Gill Sans MT", font_size=14, font_weight='bold')))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>Step4 -</strong> <font color="blue">Format Bsr charts parameters</font></p>
+<pre class="line-numbers language-none"><code class="language-none">bar.set_series_opts(markpoint_opts=opts.MarkPointOpts(data=[
+    # opts.MarkPointItem(type_='max', name="Maximum"),
+    # opts.MarkPointItem(type_="min", name="Minimum"),
+    opts.MarkPointItem(type_="average", name="平均值", itemstyle_opts=opts.ItemStyleOpts(opacity=0.45)),  #symbol='arrow', 这里的opacity=0.4是设置MarkPointItem的透明度的
+],))
+bar.set_series_opts(markline_opts=opts.MarkLineOpts(data=[
+    # opts.MarkLineItem(type_='min', name='Minimum'),
+    # opts.MarkLineItem(type_='max', name='maximum'),
+    # opts.MarkLineItem(type_='average', name='average', symbol='none') ## PyECharts 提供的标记类型包括 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'
+], label_opts=opts.TextStyleOpts(font_family='Gill Sans MT')))
+
+bar.set_series_opts(tooltip_opts=opts.TooltipOpts(border_color="yellow", border_width=1, is_always_show_content=True)) # 设置提示工具框显示
+bar.set_series_opts(label_opts=opts.LabelOpts(position='top', font_family='Gill Sans MT', font_weight='normal')) # item 上面的字体设置(#设置数据标签所在的位置 'top'，'left'，'right'，'bottom'，'inside'，'insideLeft'，'insideRight'  # 'insideTop'，'insideBottom'， 'insideTopLeft'，'insideBottomLeft'  # 'insideTopRight'，'insideBottomRight')
+bar.set_series_opts(itemstyle_opts=opts.ItemStyleOpts(opacity=0.45)) #设置item显示的透明度
+# bar.set_global_opts(yaxis_opts=opts.AxisOpts(name="The Scale Unit", name_gap=36, name_location='right', name_textstyle_opts=opts.TextStyleOpts(font_family='Gill Sans MT', font_size=14, font_weight='bold')))
+# bar.set_global_opts(title_opts=opts.TitleOpts(title="这是我的标题Title", subtitle="这里定义我的子标题", title_textstyle_opts=opts.TextStyleOpts(font_family="Gill Sans MT")))
+
+
+# 设置x轴和y轴上显示字体的属性 - 重复定义某一个变量，容易覆盖之前的定义属性
+# bar.set_global_opts(xaxis_opts=opts.AxisOpts(axislabel_opts=opts.TextStyleOpts(font_family='Gill Sans MT', font_size=12, font_weight='bold'))) # 设置x轴字体显示
+# bar.set_global_opts(yaxis_opts=opts.AxisOpts(axislabel_opts=opts.TextStyleOpts(font_family='Gill Sans MT', font_size=12, font_weight='bold', font_style='italic', color='green')))  # 设置y轴字体显示
+
+# 定义x轴(yaxis_index=0)坐标轴标签信息 -
+bar.set_global_opts(xaxis_opts=opts.AxisOpts(name="QA Cumulative Execution Burndown Chart", name_gap=28, name_location="middle", name_textstyle_opts=opts.TextStyleOpts(font_family="Gill Sans MT", font_size=18, font_weight='bold', color="black"), axislabel_opts=opts.TextStyleOpts(font_family='Gill Sans MT', font_size=12, font_style='italic', font_weight='bold', color='black'),
+                                             axisline_opts=opts.AxisLineOpts(linestyle_opts=opts.LineStyleOpts(width=2, color='black')), # 设置x轴粗细度
+                                                                             ))
+
+## # 定义y轴(yaxis_index=0)坐标轴标签信息 -(interval = 8 设置刻度间隔, 设置第一个y轴的刻度和间隔  interval=5, max_=30, ）
+bar.set_global_opts(yaxis_opts=opts.AxisOpts(name="Daily Execution Scale", max_=15, name_gap=15, name_location='end', name_textstyle_opts=opts.TextStyleOpts(font_family='Gill Sans MT', font_size=14, font_weight='bold'), offset=20, axispointer_opts=opts.AxisPointerOpts(is_show=True), axislabel_opts=opts.TextStyleOpts(font_family='Gill Sans MT', font_size=12, font_weight='bold', font_style='italic', color='black'), axisline_opts=opts.AxisLineOpts(linestyle_opts=opts.LineStyleOpts(width=2, color='black', opacity=0.5,))))
+##name_location =  'start', 'middle' 或者 'center','end', 上两句是随x轴，y轴移动的，不会跑上面去
+
+# 定义lengend 标轴标签信息 -
+bar.set_global_opts(legend_opts=opts.LegendOpts(padding=5, align='left', pos_left='18%', pos_top=26, textstyle_opts=opts.TextStyleOpts(font_family="Gill Sans MT", font_size=12)))# pos_right='10%', pos_left='20%' #设置图例显示位置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>Step5 -</strong> <font color="blue">Recall another charts Line and format Line char parameters</font></p>
+<pre class="line-numbers language-none"><code class="language-none"># 创建Line图示，并将其对应到 yaxis_index=1
+line = Line(init_opts=opts.InitOpts(width="1560px", height="400px"))
+
+# line.add_xaxis(["Day01", "Day02", "Day03", "Day04", "Day05", "Day06", "Day07", "Day08", "Day09", "Day10"])
+# line.add_yaxis(" ", [5, 12, 21, 32, 45, 60, 77, 96, 112, 118], yaxis_index=1, linestyle_opts=opts.LineStyleOpts(width=3, curve=3, type_='dashed', color='red'), label_opts=opts.LabelOpts(font_family='Gill Sans MT', font_weight='bold', position='top')) ## 'solid', 'dashed', 'dotted'; opacity=1
+# line.add_yaxis("Calculative Execution", [3, 11, 18, 26, 46, 62, 75, 96, 108, 118], yaxis_index=1, linestyle_opts=opts.LineStyleOpts(width=2, curve=3, type_='solid', color='green'), label_opts=opts.LabelOpts(font_family='Gill Sans MT', font_weight='bold', font_size=13, position='bottom', vertical_align='middle')) #可选 'top'，'left'，'right'，'bottom'，'inside'，'insideLeft'，'insideRight'.....
+
+# is_smooth=True,  画出平滑的线条
+line.add_xaxis(getDateRangeList)
+line.add_yaxis("  /", getPlanedCumulativeRangeList, is_smooth=True, yaxis_index=1, linestyle_opts=opts.LineStyleOpts(width=4, curve=4, type_='dashed', color='red'), label_opts=opts.LabelOpts(font_family='Gill Sans MT', font_weight='bold', position='top', vertical_align='middle', border_radius=45, background_color='lightPink'), symbol='diamond', symbol_size=8) ## 'solid', 'dashed', 'dotted'; opacity=1, vertical_algin = top, bottom, middle 设置图标的位置
+line.add_yaxis("Calculative Execution", getActualCumulativeRangeList, is_smooth=True, yaxis_index=1, linestyle_opts=opts.LineStyleOpts(width=3, curve=3, type_='solid', color='green'), label_opts=opts.LabelOpts(font_family='Gill Sans MT', font_weight='bold', font_size=13, position='bottom', border_radius=30, vertical_align='middle', background_color='lightGreen'), symbol_size=6) #可选 'top'，'left'，'right'，'bottom'，'inside'，'insideLeft'，'insideRight'.....<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>Step6 -</strong> <font color="blue">Overlap the charts and generate the report</font></p>
+<pre class="line-numbers language-none"><code class="language-none">bar.overlap(line)
+bar.render("burnDownReport.html")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>Step7 -</strong> <font color="red">See the execution result</font><br><img src="%22/medias/testReportsIcons/burndownChart1.png%22" alt="This is the execution result - burndown chart1"></p>
+<p><img src="%22/medias/testReportsIcons/burndownChart2.png%22" alt="This is the execution result - burndown chart2"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Alan_Yuan</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://lelloandluck.github.io/2022/02/03/customize-your-burndown-chart/">http://lelloandluck.github.io/2022/02/03/customize-your-burndown-chart/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Alan_Yuan</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/python-pyecharts/">
+                                    <span class="chip bg-color">python pyecharts</span>
+                                </a>
+                            
+                                <a href="/tags/python-report/">
+                                    <span class="chip bg-color">python report</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赞赏是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2022/02/03/a-funny-scripts-on-checking-excel-cells/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="A funny scripts on checking excel cells">
+                        
+                        <span class="card-title">A funny scripts on checking excel cells</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python%E8%87%AA%E5%8A%A8%E5%8C%96/" class="post-category">
+                                    python自动化
+                                </a>
+                            
+                            <a href="/categories/python%E8%87%AA%E5%8A%A8%E5%8C%96/python-excel/" class="post-category">
+                                    python excel
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python%E8%87%AA%E5%8A%A8%E5%8C%96/">
+                        <span class="chip bg-color">python自动化</span>
+                    </a>
+                    
+                    <a href="/tags/python-excel/">
+                        <span class="chip bg-color">python excel</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/12/29/a-useful-application-of-python-in-excel/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="A useful application of Python in Excel">
+                        
+                        <span class="card-title">A useful application of Python in Excel</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            <a href="/categories/Python/Excel/" class="post-category">
+                                    Excel
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/Excel/">
+                        <span class="chip bg-color">Excel</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: Alan.Yuan<br />'
+            + 'Author: Alan_Yuan<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m12 24 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2015-2022</span>
+            
+            <!--<span id="year">2015</span>-->
+            |&nbsp;Powered by&nbsp;<a href="/about" target="_blank">Alan_Yuan</a>
+
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis"><!-- 
+
+    <a href="https://github.com/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+-->
+
+<!--
+
+    <a href="mailto:1094181625@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1094181625" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1094181625" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+-->
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
